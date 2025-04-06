@@ -241,6 +241,7 @@ section {
 .btn-color-2:hover {
     background: #212325;
     border: rgb(255,255,255) 0.1rem solid;
+    color: white;
 }
 
 .btn-container {
