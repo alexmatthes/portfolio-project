@@ -598,33 +598,6 @@ input:checked + .slider:before {
     transform: scale(1.03);
 }
 
-/* Spotlight Cursor Effect */
-.photo-grid {
-    position: relative;
-    overflow: hidden; /* Important for containing the spotlight */
-}
-
-.photo-grid::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Allows you to click through the spotlight */
-    background: radial-gradient(
-        circle 250px at var(--x, 50%) var(--y, 50%),
-        rgba(255, 255, 255, 0.1),
-        rgba(0, 0, 0, 0.6)
-    );
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.photo-grid:hover::before {
-    opacity: 1;
-}
-
 /* MODAL (LIGHTBOX) STYLES */
 .modal {
     display: none; /* Hidden by default */
