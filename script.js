@@ -121,3 +121,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector("#sub-title");
+
+  if (title) {
+    const letters = title.querySelectorAll("span");
+
+    letters.forEach((letter, index) => {
+      letter.style.animationDelay = `${index * 0.05}s`;
+    });
+  }
+});
