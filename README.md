@@ -65,7 +65,7 @@ This portfolio is a responsive, accessible, and SEO-optimized website built with
 
 | Main Profile Section | Projects Display | Contact Section |
 |---------------------|------------------|----------------|
-| ![Profile](./assets/profile-picture.jpeg) | ![Projects](./assets/website-screenshot.png) | ![Contact](./assets/email.png) |
+| ![Profile](./assets/website-screenshot.png) | ![Projects](./assets/website-screenshot.png) | ![Contact](./assets/email.png) |
 
 ---
 
