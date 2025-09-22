@@ -34,15 +34,6 @@ This portfolio is a responsive, accessible, and SEO-optimized website built with
 
 ---
 
-## 📁 File Structure
-├── index.html         # Main landing page
-├── project1.html      # Detailed project view
-├── style.css          # Main stylesheet
-├── mediaqueries.css   # Responsive design
-├── assets/            # Images, icons, resume PDF
-└── script.js          # Site functionality
----
-
 ## 🛠️ Skills & Tools
 
 **Languages:**
