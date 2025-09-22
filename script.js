@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         photoItems.forEach(item => {
             item.addEventListener("click", () => {
-                modal.style.display = "block";
+                modal.style.display = "flex";
                 modalImage.src = item.src;
             });
         });
