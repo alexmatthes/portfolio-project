@@ -41,3 +41,33 @@ function switchTheme(e) {
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
+
+// LIGHTBOX GALLERY FUNCTIONALITY
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("lightbox-modal");
+    if (modal) { // Only run this code if the modal exists on the page
+        const modalImage = document.getElementById("lightbox-image");
+        const photoItems = document.querySelectorAll(".photo-item img");
+        const closeButton = document.querySelector(".close-button");
+
+        photoItems.forEach(item => {
+            item.addEventListener("click", () => {
+                modal.style.display = "block";
+                modalImage.src = item.src;
+            });
+        });
+
+        const closeModal = () => {
+            modal.style.display = "none";
+        }
+
+        closeButton.addEventListener("click", closeModal);
+
+        // Also close modal if user clicks on the background
+        window.addEventListener("click", (event) => {
+            if (event.target == modal) {
+                closeModal();
+            }
+        });
+    }
+});

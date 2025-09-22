@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography | Alex Matthes</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+    <nav id="desktop-nav" aria-label="Main Navigation">
+        <a href="./index.html" class="logo-link">
+            <div class="logo">A<span>M</span></div>
+        </a>
+        <div>
+            <ul class="nav-links">
+                <li><a href="./index.html#about">About</a></li>
+                <li><a href="./index.html#experience">Experience</a></li>
+                <li><a href="./index.html#projects">Projects</a></li>
+                <li><a href="./index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav id="hamburger-nav" aria-label="Hamburger Navigation Menu">
+        <div class="logo">A<span>M</span></div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <ul>
+                    <li><a href="./index.html#about" onclick="toggleMenu()">About</a></li>
+                    <li><a href="./index.html#experience" onclick="toggleMenu()">Experience</a></li>
+                    <li><a href="./index.html#projects" onclick="toggleMenu()">Projects</a></li>
+                    <li><a href="./index.html#contact" onclick="toggleMenu()">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="photography-gallery">
+            <h1 class="title">Photography</h1>
+            <p class="section__text__p1">A collection of my favorite shots.</p>
+
+            <div class="photo-grid">
+                <div class="photo-item hidden">
+                    <img src="./assets/photo-1.jpg" alt="Description of photo 1">
+                </div>
+                <div class="photo-item hidden">
+                    <img src="./assets/photo-2.jpg" alt="Description of photo 2">
+                </div>
+                <div class="photo-item hidden">
+                    <img src="./assets/photo-3.jpg" alt="Description of photo 3">
+                </div>
+                <div class="photo-item hidden">
+                    <img src="./assets/photo-4.jpg" alt="Description of photo 4">
+                </div>
+                <div class="photo-item hidden">
+                    <img src="./assets/photo-5.jpg" alt="Description of photo 5">
+                </div>
+                <div class="photo-item hidden">
+                    <img src="./assets/photo-6.jpg" alt="Description of photo 6">
+                </div>
+                </div>
+        </section>
+    </main>
+
+    <div id="lightbox-modal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="lightbox-image">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
