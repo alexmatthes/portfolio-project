@@ -42,6 +42,20 @@ function switchTheme(e) {
 
 toggleSwitch.addEventListener('change', switchTheme, false);
 
+// Scroll Animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el) => observer.observe(el));
+
 // LIGHTBOX GALLERY FUNCTIONALITY
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("lightbox-modal");
@@ -70,4 +84,4 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
-});
+})
