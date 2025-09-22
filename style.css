@@ -207,7 +207,7 @@ section {
 .icon {
     cursor: pointer;
     height: 2rem;
-    transition: all 300ms ease;
+    transition: transform 0.1s linear;
 }
 
 .icon:hover {
@@ -639,4 +639,19 @@ input:checked + .slider:before {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+}
+
+/*Tactile button press*/
+
+.btn:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+/*Staggered Text Animation*/
+#main-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  animation: reveal-letter 0.5s forwards;
 }

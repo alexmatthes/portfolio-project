@@ -86,3 +86,38 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 })
+
+// Magnetic Icons
+
+document.addEventListener("DOMContentLoaded", () => {
+  const icons = document.querySelectorAll('#socials-container .icon');
+
+  icons.forEach(icon => {
+    icon.addEventListener('mousemove', (e) => {
+      const { offsetX: x, offsetY: y } = e;
+      const { offsetWidth: width, offsetHeight: height } = icon;
+      const move = 25;
+      const xMove = x / width * (move * 2) - move;
+      const yMove = y / height * (move * 2) - move;
+      icon.style.transform = `translate(${xMove}px, ${yMove}px)`;
+    });
+
+    icon.addEventListener('mouseleave', () => {
+      icon.style.transform = '';
+    });
+  });
+});
+
+//Staggered Reveal
+
+document.addEventListener("DOMContentLoaded", () => {
+  const title = document.querySelector("#main-title");
+
+  if (title) {
+    const letters = title.querySelectorAll("span");
+
+    letters.forEach((letter, index) => {
+      letter.style.animationDelay = `${index * 0.05}s`;
+    });
+  }
+});
