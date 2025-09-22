@@ -13,6 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Matthes Portfolio</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
 
@@ -42,8 +43,8 @@
 
 <body>
     <nav id="desktop-nav" aria-label="Main Navigation">
-        <a href="./index.html">
-            <div class="logo">Alex Matthes</div>
+        <a href="./index.html" class="logo-link">
+            <div class="logo">A<span>M</span></div>
         </a>
 
         <div>
@@ -54,10 +55,20 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
+
+        <div class="theme-switch-wrapper">
+          <span id="sun-icon">☀️</span>
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+          <span id="mood-icon">🌙</span> 
+        </div>
+
     </nav>
 
     <nav id="hamburger-nav" aria-label="Hamburger Navigation Menu">
-        <div class="logo">Alex Matthes</div>
+        <div class="logo">A<span>M</span></div>
 
         <div class="hamburger-menu">
             <div class="hamburger-icon" onclick="toggleMenu()">

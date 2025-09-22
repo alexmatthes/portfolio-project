@@ -50,18 +50,26 @@ a {
 }
 
 a:hover {
-    color:gray;
+    color: #2979FF;
     text-decoration: underline;
     text-underline-offset: 1rem;
-    text-decoration-color: rgb(181, 181, 181);
+    text-decoration-color: #2979FF;
 }
 
 .logo {
     font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+    transition: all 300ms ease;
+}
+
+.logo span{
+  color: #2970FF;
 }
 
 .logo:hover {
     cursor: pointer;
+    letter-spacing: 1px;
 }
 
 /* HAMBURGER MENU */
@@ -199,6 +207,11 @@ section {
 .icon {
     cursor: pointer;
     height: 2rem;
+    transition: all 300ms ease;
+}
+
+.icon:hover {
+  transform: scale(1.2);
 }
 
 /* BUTTONS */
@@ -226,12 +239,12 @@ section {
 }
 
 .btn-color-1 {
-    background: #646a6e;
+    background: #2979FF;
     color: white;
 }
 
 .btn-color-1:hover {
-    background: #212325;
+    background: #1c5fe6;
 }
 
 .btn-color-2 {
@@ -287,6 +300,13 @@ section {
     border: rgb(53, 53, 53) 0.1rem solid;
     border-color: rgb(163, 163, 163);
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 300ms ease;
+}
+
+.details-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .section-container {
@@ -415,4 +435,126 @@ footer {
 
 footer p {
     text-align: center;
+}
+
+/* DARK MODE STYLES */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+body.dark-mode p {
+  color: #e0e0e0;
+}
+
+body.dark-mode .logo {
+  color: #fff;
+}
+
+body.dark-mode .details-container {
+  background: #333;
+  border-color: #555;
+}
+
+body.dark-mode .color-container {
+  background: #2a2a2a;
+}
+
+body.dark-mode .project-title {
+  color: #fff;
+}
+
+body.dark-mode a {
+  color: #fff;
+}
+
+body.dark-mode .contact-info-upper-container {
+  background: #2a2a2a;
+  border: 1px solid #555;
+}
+
+body.dark-mode .contact-info-container p a {
+  color: #fff;
+}
+
+body.dark-mode .icon {
+  filter: invert(1) brightness(2);
+}
+
+body.dark-mode .btn-color-2 {
+  color: #fff;
+  border-color: #fff;
+}
+
+body.dark-mode .btn-color-2:hover {
+  color: #1a1a1a;
+  background: #fff;
+}
+
+body.dark-mode .experience-sub-title {
+  color: #e0e0e0;
+}
+
+body.dark-mode #experience .icon {
+  filter: invert(1) brightness(2);
+}
+
+/* TOGGLE SWITCH */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+}
+
+input:checked + .slider {
+  background-color: #2979FF;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#sun-icon, #moon-icon {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
 }
