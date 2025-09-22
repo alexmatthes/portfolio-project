@@ -1,7 +1,6 @@
 # Alex Matthes | Personal Portfolio
 
-Welcome to my personal portfolio repository!  
-This site was created to showcase my skills, experience, and projects as a Computer Science and Engineering student at The Ohio State University. I am actively seeking internship opportunities and open to collaboration.
+Welcome to my personal portfolio repository! This site was created to showcase my skills, experience, and projects as a Computer Science and Engineering student at The Ohio State University. I am actively seeking internship opportunities and open to collaboration.
 
 ![Portfolio Screenshot](./assets/website-screenshot.png)
 
@@ -9,13 +8,13 @@ This site was created to showcase my skills, experience, and projects as a Compu
 
 ## 🌟 About Me
 
-I am a Computer Science and Engineering major (B.S.) with a minor in Theatre at OSU. I am passionate about software development, problem solving, and building accessible web experiences. My portfolio highlights my journey and the skills I've gained through coursework, personal projects, and professional experiences.
+I am a Computer Science and Engineering major (B.S.) with a minor in Theatre at OSU. I am passionate about software development, problem-solving, and building accessible web experiences. My portfolio highlights my journey and the skills I've gained through coursework, personal projects, and professional experiences.
 
 - **Location:** Columbus, Ohio
 - **Status:** Open to Software Developer Internship opportunities
 - **Contact:** [matthes.20@buckeyemail.osu.edu](mailto:matthes.20@buckeyemail.osu.edu)
 - **LinkedIn:** [linkedin.com/in/matthesdev](https://linkedin.com/in/matthesdev)
-- **GitHub:** [alexmatthes](https://github.com/alexmatthes)
+- **GitHub:** [github.com/alexmatthes](https://github.com/alexmatthes)
 
 ---
 
@@ -27,37 +26,36 @@ This portfolio is a responsive, accessible, and SEO-optimized website built with
 - **JavaScript**
 
 ### 🔑 Key Features
-- Clear, single-page navigation with anchor links for About, Experience, Projects, and Contact sections
-- Professional UI/UX with focus on readability and accessibility
-- Downloadable resume and direct email contact option
+- Clear, single-page navigation with anchor links for easy browsing
+- Professional UI/UX with a focus on readability and accessibility
+- Downloadable resume and direct email contact options
 - Project gallery with screenshots and "Read More" details
 - Social links to LinkedIn and GitHub
 
 ---
 
 ## 📁 File Structure
-
-```
-├── index.html             # Main landing page
-├── project1.html          # Detailed project view
-├── style.css              # Main stylesheet
-├── mediaqueries.css       # Responsive design
-├── assets/                # Images, icons, resume PDF
-├── script.js              # Site functionality (if present)
-```
-
+├── index.html         # Main landing page
+├── project1.html      # Detailed project view
+├── style.css          # Main stylesheet
+├── mediaqueries.css   # Responsive design
+├── assets/            # Images, icons, resume PDF
+└── script.js          # Site functionality
 ---
 
 ## 🛠️ Skills & Tools
 
-**Languages:**  
+**Languages:**
 - Java (Experienced)
 - C++ (Experienced)
 - HTML/CSS (Experienced)
 - JavaScript (Familiar)
 
-**Developer Tools:**  
-*See Experience section on the site for details.*
+**Developer Tools & Platforms:**
+- Git & GitHub
+- VS Code
+- Figma
+- Linux/Unix Environments
 
 ---
 
@@ -80,5 +78,6 @@ Feel free to reach out for opportunities, collaboration, or questions!
 
 ## 📝 License
 
-This project is open-source for learning and demonstration purposes.  
-&copy; 2024 Alex Matthes. All rights reserved.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+&copy; 2025 Alex Matthes
