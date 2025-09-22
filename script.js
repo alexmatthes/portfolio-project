@@ -60,6 +60,7 @@ hiddenElements.forEach((el) => observer.observe(el));
 document.addEventListener("DOMContentLoaded", function() {
     const modal = document.getElementById("lightbox-modal");
     if (modal) { // Only run this code if the modal exists on the page
+      modal.style.display = "none";
         const modalImage = document.getElementById("lightbox-image");
         const photoItems = document.querySelectorAll(".photo-item img");
         const closeButton = document.querySelector(".close-button");
