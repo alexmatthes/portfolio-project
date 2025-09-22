@@ -133,3 +133,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// SPOTLIGHT CURSOR EFFECT
+document.addEventListener("DOMContentLoaded", () => {
+    const photoGrid = document.querySelector(".photo-grid");
+    if (photoGrid) {
+        photoGrid.addEventListener("mousemove", e => {
+            const rect = photoGrid.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            photoGrid.style.setProperty("--x", `${x}px`);
+            photoGrid.style.setProperty("--y", `${y}py`);
+        });
+    }
+});
