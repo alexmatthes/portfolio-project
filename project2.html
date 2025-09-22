@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Project</title>
+    <title>writeAM Text Editor Project</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="mediaqueries.css">
 </head>
@@ -44,35 +44,35 @@
     </nav>
     
     <section id="about">
-        <h1 class="title">Personal Portfolio Project</h1>
+        <h1 class="title">writeAM Text Editor</h1>
         <p class="section__text__p2"><br>Overview and Goals : </p>
             <div class="text-container">
-                    <p>As a computer science student, I wanted to create a central hub to showcase my skills, projects, and experiences. The primary goal of this portfolio was to build a professional and accessible website that effectively communicates my passion for software development and my readiness for an internship. I aimed to create a clean, user-friendly, and responsive site that would leave a positive impression on potential employers and collaborators.</p>
+                    <p>The goal of this project was to build a lightweight, minimalist text editor that runs entirely in the terminal. Named "writeAM" after my initials, this project was an exercise in systems programming, built from scratch in C with no external library dependencies to deepen my understanding of memory management, terminal I/O, and application architecture.</p>
             </div>
 
         <p class="section__text__p2"><br>Inspiration: </p>
             <div class="text-container">
-                    <p>My inspiration came from a desire for a minimalist and modern aesthetic. I focused on a design that prioritizes readability and ease of navigation. The layout is a single-page design with anchor links to allow for smooth scrolling between sections. The color scheme is simple and professional, using a neutral palette to ensure that the content is the main focus. I chose the "Poppins" font for its clean and modern look, which enhances the overall readability of the site.</p>
+                    <p>This project was heavily inspired by the classic "Build Your Own Text Editor" tutorial for the Kilo editor. I was motivated to create a tool that embodies the simplicity and power of traditional Unix command-line utilities. The design focuses on a clean, functional, terminal-based UI, using raw mode and ANSI escape sequences to control rendering and user interaction directly.</p>
             </div>
         
         <p class="section__text__p2"><br>Challenges : </p>
             <div class="text-container">
-                    <p>One of the main challenges was ensuring the website was fully responsive across a wide range of devices, from mobile phones to desktops. This required careful planning and the extensive use of media queries to adjust the layout and styling for different screen sizes. Implementing the hamburger menu for mobile navigation also presented a learning opportunity, as I had to use JavaScript to toggle the menu's visibility and create a seamless user experience.</p>
+                    <p>Building an editor in pure C presented several challenges. A primary one was managing the terminal in raw mode, which required careful handling of low-level I/O to process keypresses individually instead of line by line. Implementing the syntax highlighting engine, which parses code to color keywords, comments, and strings, was another complex task that demanded meticulous string manipulation and state management. Finally, ensuring robust memory management for file buffers and text rows was critical to prevent leaks and crashes.</p>
             </div>
 
         <p class="section__text__p2"><br>Key Features : </p>
             <div class="text-container">
                     <ul>
-                        <li><b>Responsive Design:</b> The website is fully responsive and accessible on various devices, thanks to the use of CSS media queries.</li>
-                        <li><b>Interactive Navigation:</b> The site features a hamburger menu for mobile navigation, which was implemented using JavaScript to provide a smooth user experience.</li>
-                        <li><b>Easy Contact:</b> The portfolio includes direct links to my resume, email, and LinkedIn profile, making it easy for visitors to get in touch.</li>
-                        <li><b>SEO Optimized:</b> Basic SEO principles were applied to improve the site's visibility on search engines.</li>
+                        <li><b>Minimalist Terminal UI:</b> A clean, distraction-free writing environment that runs directly in the terminal.</li>
+                        <li><b>Syntax Highlighting:</b> Provides syntax highlighting for the C programming language, including keywords, comments, strings, and numbers.</li>
+                        <li><b>Text Search:</b> Features an incremental search function (Ctrl+F) to quickly find text within a file.</li>
+                        <li><b>Zero Dependencies:</b> Built with pure C and standard libraries, making it highly portable across Unix-like systems.</li>
                     </ul>
             </div>
         
         <p class="section__text__p2"><br>Learning Outcomes : </p>
             <div class="text-container">
-                    <p>This project was a great opportunity to solidify my front-end development skills. I gained hands-on experience with HTML5, CSS3, and JavaScript, and learned how to structure a website for both aesthetics and functionality. I also developed a deeper understanding of responsive design principles and the importance of creating an accessible and user-friendly web experience. This project has given me a solid foundation in web development that I am excited to build upon in future roles.</p>
+                    <p>This project was an invaluable learning experience in C programming and low-level systems interaction. I gained a practical understanding of terminal I/O, including manipulating raw mode and using escape sequences. It significantly improved my skills in manual memory management, pointer arithmetic, and building robust data structures. Developing features like search and syntax highlighting also provided deep insights into text processing algorithms and state machine design.</p>
             </div> 
     </section>
 
