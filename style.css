@@ -86,7 +86,6 @@ nav {
   display: block;
   width: 1.2em;
   height: 3px;
-  background: var(--secondary-accent);
   margin-top: 2px;
 }
 
@@ -866,6 +865,10 @@ body.dark-mode .photo-item {
   box-shadow: 8px 8px 0 #3a2f29;
 }
 
-body.dark-mode h1, h3 {
+body.dark-mode h1 {
+  color: #F6EBD9;
+}
+
+body.dark-mode h3 {
   color: #F6EBD9;
 }
