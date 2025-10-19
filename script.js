@@ -109,27 +109,22 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //Staggered Reveal
-
 document.addEventListener("DOMContentLoaded", () => {
   const title = document.querySelector("#main-title");
-
   if (title) {
-    const letters = title.querySelectorAll("span");
-
-    letters.forEach((letter, index) => {
-      letter.style.animationDelay = `${index * 0.05}s`;
+    title.querySelectorAll("span").forEach((letter, i) => {
+      const jitter = (Math.random() * 0.04).toFixed(3); // 0–0.04s
+      letter.style.animationDelay = `${i * 0.1 + Number(jitter)}s`;
     });
   }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   const title = document.querySelector("#sub-title");
-
   if (title) {
-    const letters = title.querySelectorAll("span");
-
-    letters.forEach((letter, index) => {
-      letter.style.animationDelay = `${index * 0.05}s`;
+    title.querySelectorAll("span").forEach((letter, i) => {
+      const jitter = (Math.random() * 0.04).toFixed(3); // 0–0.04s
+      letter.style.animationDelay = `${i * 0.1 + Number(jitter)}s`;
     });
   }
 });
