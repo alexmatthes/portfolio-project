@@ -15,10 +15,10 @@
     <title>Alex Matthes Portfolio</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="mediaqueries.css" media="screen">
 
     <!-- Basic SEO -->
-    <meta name="description" content="Portfolio of Alex Matthes, a Computer Science student at The Ohio State University. Showcasing skills in Java, C++, HTML/CSS, and project work.">
+    <meta name="description" content="Alex Matthes - Computer Science student at Ohio State University. View my portfolio featuring web development projects, C programming, and software engineering work. Open to internship opportunities.">
     <meta name="keywords" content="Alex Matthes, computer science, portfolio, Ohio State, Java, C++, frontend, student developer">
     <meta name="author" content="Alex Matthes">
 
@@ -38,10 +38,33 @@
     <!-- Give soul to robot overlords -->
     <meta name="robots" content="index, follow" />
 
-
+     <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alex Matthes",
+      "jobTitle": "Computer Science and Engineering Student",
+      "description": "Computer Science student at The Ohio State University seeking software development internship opportunities",
+      "url": "https://alexmatthes.dev",
+      "image": "https://alexmatthes.dev/assets/profile-picture.jpeg",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "The Ohio State University"
+      },
+      "knowsAbout": ["Java", "C++", "HTML", "CSS", "JavaScript", "Software Development"],
+      "sameAs": [
+        "https://linkedin.com/in/matthesdev",
+        "https://github.com/alexmatthes"
+      ],
+      "email": "mailto:matthes.20@buckeyemail.osu.edu"
+    }
+    </script>
 </head>
 
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <nav id="desktop-nav" aria-label="Main Navigation">
         <a href="./index" class="logo-link" aria-current="page">
             <div class="logo">A<span>M</span></div>
@@ -87,10 +110,10 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
       <section id="profile">
           <div class="section__pic-container">
-              <img src="./assets/profile-picture.jpeg" alt="Headshot of Alex Matthes"/>
+              <img src="./assets/profile-picture.webp" alt="Headshot of Alex Matthes"/>
           </div>
 
           <div class="section__text">
@@ -106,8 +129,8 @@
                   <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
               </div>
               <div id="socials-container">
-                  <img src="./assets/linkedin.png" alt="My Linkedin Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/matthesdev/'">
-                  <img src="./assets/github.png" alt="My Github Page" class="icon" onclick="location.href='https://github.com/alexmatthes'">
+                  <img src="./assets/linkedin.svg" alt="My Linkedin Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/matthesdev/'">
+                  <img src="./assets/github.svg" alt="My Github Page" class="icon" onclick="location.href='https://github.com/alexmatthes'">
               </div>
           </div>
       </section>
@@ -117,24 +140,24 @@
           <h1 class="title">About Me</h1>
           <div class="section-container">
               <div class="section__pic-container">
-                  <img src="./assets/about-picture.jpeg" alt="Alex Matthes performing on a stage in a theatrical production" class="about-pic"/>
+                  <img src="./assets/about-picture.webp" alt="Alex Matthes performing on a stage in a theatrical production" class="about-pic"/>
               </div>
               <div class="about-details-container">
                   <div class="about-containers">
                       <div class="details-container"> 
-                          <img src="./assets/experience.png" alt="Icon representing experience" class="icon"/>
+                          <img src="./assets/experience.svg" alt="Icon representing experience" class="icon"/>
                           <h3>Experience</h3>
                           <p>Student Technology Assistant </br>Resturaunt Host</p>
                       </div>
 
                       <div class="details-container">
-                          <img src="./assets/education.png" alt="Icon representing education" class="icon"/>
+                          <img src="./assets/education.svg" alt="Icon representing education" class="icon"/>
                           <h3>Education</h3>
                           <p>B.S. in Computer Science and Engineering and Theatre Minor (In Progress)</br>High School Diploma</p>
                       </div>
 
                       <div class="details-container">
-                        <img src="./assets/hobbies.png" alt="Icon depicting various hobbies" class="icon"/>
+                        <img src="./assets/hobbies.svg" alt="Icon depicting various hobbies" class="icon"/>
                         <h3>Hobbies</h3>
                         <p>Photography</br>Theatre & Acting</br>Fitness</br>Music</p>
                         <div class="btn-container" style="margin-top: 1rem;">
@@ -152,7 +175,7 @@
                   </div>
               </div>
           </div>
-          <img src="./assets/arrow.png" alt="Arrow Icon" class="icon arrow" onclick="location.href='#experience'"/>
+          <img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" onclick="location.href='#experience'"/>
       </section>
 
       <section id="experience">
@@ -164,28 +187,28 @@
                       <h2 class="experience-sub-title">Languages</h2>
                       <div class="article-container">
                           <article>
-                              <img src="./assets/checkmark.png" alt="Checkmark Icon" class="icon"/>
+                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
                               <div>
                                   <h3>Java</h3>
                                   <p>Experienced</p>
                               </div>
                           </article>
                           <article>
-                              <img src="./assets/checkmark.png" alt="Checkmark Icon" class="icon"/>
+                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
                               <div>
                                   <h3>C++</h3>
                                   <p>Experienced</p>
                               </div>
                           </article>
                           <article>
-                              <img src="./assets/checkmark.png" alt="Checkmark Icon" class="icon"/>
+                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
                               <div>
                                   <h3>HTML</h3>
                                   <p>Experienced</p>
                               </div>
                           </article>
                           <article>
-                              <img src="./assets/checkmark.png" alt="Checkmark Icon" class="icon"/>
+                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
                               <div>
                                   <h3>CSS</h3>
                                   <p>Experienced</p>
@@ -198,35 +221,35 @@
                       <h2 class="experience-sub-title">Developer Tools</h2>
                       <div class="article-container">
                           <article>
-                              <img src="./assets/checkmark.png" alt="Checkmark Icon" class="icon"/>
+                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
                               <div>
                                   <h3>Visual Studio</h3>
                                   <p>Experienced</p>
                               </div>
                           </article>
                           <article>
-                              <img src="./assets/checkmark.png" alt="Checkmark Icon" class="icon"/>
+                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
                               <div>
                                   <h3>VS Code</h3>
                                   <p>Experienced</p>
                               </div>
                           </article>
                           <article>
-                              <img src="./assets/checkmark.png" alt="Checkmark Icon" class="icon"/>
+                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
                               <div>
                                   <h3>Eclipse</h3>
                                   <p>Experienced</p>
                               </div>
                           </article>
                           <article>
-                              <img src="./assets/checkmark.png" alt="Checkmark Icon" class="icon"/>
+                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
                               <div>
                                   <h3>MATLAB</h3>
                                   <p>Experienced</p>
                               </div>
                           </article>
                           <article>
-                              <img src="./assets/checkmark.png" alt="Checkmark Icon" class="icon"/>
+                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
                               <div>
                                   <h3>Arduino</h3>
                                   <p>Experienced</p>
@@ -236,7 +259,7 @@
                   </div>
               </div>
           </div>
-          <img src="./assets/arrow.png" alt="Arrow Icon" class="icon arrow" onclick="location.href='#projects'"/>
+          <img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" onclick="location.href='#projects'"/>
       </section>
 
       <section id="projects">
@@ -247,7 +270,7 @@
 
               <div class="details-container color-container">
                   <div class="article-container">
-                      <img src="./assets/website-screenshot.png" alt="Screenshot of the personal portfolio website project" class="project-img"/>
+                      <img src="./assets/website-screenshot.webp" alt="Screenshot of the personal portfolio website project" class="project-img"/>
                   </div>
                   <h2 class="experience-sub-title project-title">Personal Portfolio</h2>
                   <p>This portfolio showcases my web development skills using HTML, CSS, and JavaScript. It's responsive, accessible, and SEO-optimized.</p>
@@ -259,7 +282,7 @@
 
               <div class="details-container color-container">
                   <div class="article-container">
-                      <img src="./assets/writeAM-screenshot.png" alt="Screenshot of the writeAM text editor project" class="project-img"/>
+                      <img src="./assets/writeAM-screenshot.webp" alt="Screenshot of the writeAM text editor project" class="project-img"/>
                   </div>
                   <h2 class="experience-sub-title project-title">writeAM Text Editor</h2>
                   <p>A lightweight, minimalist text editor that runs directly in your terminal, built from scratch in C with zero external library dependencies.</p>
@@ -271,7 +294,7 @@
 
               </div>
           </div>
-          <img src="./assets/arrow.png" alt="Arrow Icon" class="icon arrow" onclick="location.href='#contact'"/>
+          <img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" onclick="location.href='#contact'"/>
       </section>
 
       <section id="contact">
@@ -280,13 +303,13 @@
 
           <div class="contact-info-upper-container">
               <div class="contact-info-container">
-                  <img src="./assets/email.png" alt="Email Icon" class="icon contact-icon email-icon"/>
+                  <img src="./assets/email.svg" alt="Email Icon" class="icon contact-icon email-icon"/>
                   <p><a href="mailto:matthes.20@buckeyemail.osu.edu">matthes.20@buckeyemail.osu.edu</a></p>
               </div>
           </div>
 
           <div class="contact-info-container">
-              <img src="./assets/linkedin.png" alt="Linkedin Icon" class="icon contact-icon"/>
+              <img src="./assets/linkedin.svg" alt="Linkedin Icon" class="icon contact-icon"/>
               <p><a href="https://linkedin.com/in/matthesdev">Linkedin</a></p>
           </div>
           

@@ -14,8 +14,199 @@
   /* Fonts */
   --heading-font: 'Fraunces', serif;      /* retro display */
   --body-font: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+
+    /* Effects */
+  --transition-base: all 300ms ease;
+  --transition-transform: transform 300ms ease;
+  --shadow-retro: 8px 8px 0 var(--ink-brown);
+  --border-retro: 2px solid var(--ink-brown);
 }
 
+/* ============================================
+   SKIP LINK (Accessibility)
+   ============================================ */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-accent);
+  color: var(--bg-color);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  z-index: 100;
+  border-radius: 0 0 8px 0;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================
+   IMPROVED FOCUS STATES
+   ============================================ */
+
+*:focus-visible {
+  outline: 3px solid var(--secondary-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--secondary-accent);
+  outline-offset: 4px;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--secondary-accent);
+  outline-offset: 4px;
+  text-decoration: underline;
+}
+
+/* Remove default focus for mouse users (keeps it for keyboard) */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ICONS */
+.icon {
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  transition: transform 0.1s linear;
+  color: var(--ink-brown); /* For SVG icons */
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+/* SVG-specific styling */
+.icon[src$=".svg"] {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Social icons colors */
+#socials-container .icon {
+  color: var(--ink-brown);
+}
+
+#socials-container .icon:hover {
+  color: var(--primary-accent);
+}
+
+/* Dark mode icon colors */
+body.dark-mode .icon {
+  color: #F6EBD9;
+}
+
+body.dark-mode .icon:hover {
+  color: var(--secondary-accent);
+}
+
+body.dark-mode #socials-container .icon {
+  color: #F6EBD9;
+}
+
+/* ============================================
+   DARK MODE THEME
+   ============================================ */
+body.dark-mode {
+  background: #14110F;
+  color: #F6EBD9;
+}
+
+body.dark-mode::before {
+  display: none;
+}
+
+/* Navigation & Headers */
+body.dark-mode nav {
+  background: linear-gradient(180deg, #1c1815 0%, #14110F 100%);
+  border-bottom-color: #3a2f29;
+}
+
+body.dark-mode .logo,
+body.dark-mode h1,
+body.dark-mode h3 {
+  color: #F6EBD9;
+}
+
+/* Text & Paragraphs */
+body.dark-mode p {
+  color: #E0E0E0;
+}
+
+/* Links */
+body.dark-mode a {
+  color: #fff;
+}
+
+body.dark-mode a:hover {
+  color: var(--secondary-accent);
+}
+
+/* Containers & Cards */
+body.dark-mode .details-container,
+body.dark-mode .photo-item {
+  background: #2A2420;
+  border-color: #D9C38B;
+  box-shadow: 8px 8px 0 #3a2f29;
+}
+
+body.dark-mode .color-container {
+  background: #2A2420;
+  border-color: #3a2f29;
+}
+
+body.dark-mode .contact-info-upper-container {
+  background: #2A2420;
+  border-color: #3a2f29;
+}
+
+/* Sections */
+body.dark-mode section { 
+  border-top-color: #3a2f29; 
+}
+
+body.dark-mode #about,
+body.dark-mode #projects { 
+  background: #1e1a17;
+}
+
+/* Buttons */
+body.dark-mode .btn {
+  background: #2A2420;
+  color: #F6EBD9;
+  border-color: #D9C38B;
+  box-shadow: 3px 3px 0 #3a2f29;
+}
+
+body.dark-mode .btn:hover {
+  box-shadow: 6px 6px 0 #3a2f29;
+}
+
+body.dark-mode .btn-color-2 {
+  color: #fff;
+  border-color: #fff;
+}
+
+body.dark-mode .btn-color-2:hover {
+  color: #1a1a1a;
+  background: #fff;
+}
+
+/* Titles & Subtitles */
+body.dark-mode .project-title,
+body.dark-mode .experience-sub-title {
+  color: #e0e0e0;
+}
+
+body.dark-mode .contact-info-container p a {
+  color: #fff;
+}
 
 * {
   margin: 0;
@@ -44,7 +235,7 @@ p {
 /* TRANSITIONS */
 
 a, .btn {
-    transition: all 300ms ease;
+    transition: var(--transition-base);
 }
 
 /* DESKTOP NAVIGATION */
@@ -96,7 +287,7 @@ nav {
 a {
     color: var(--ink-brown);
     text-decoration: none;
-    transition: all 300ms ease;
+    transition: var(--transition-base);
 }
 
 a:hover {
@@ -215,7 +406,7 @@ section {
   margin: auto 0;
   border-radius: 999px;
   border: 10px solid var(--secondary-accent);
-  box-shadow: 8px 8px 0 var(--ink-brown);
+  box-shadow: var(--shadow-retro);
   overflow: hidden;
   background: var(--primary-accent);
 }
@@ -233,7 +424,7 @@ section {
   text-align: center;
   background: var(--secondary-accent);
   color: #3b2a12;
-  border: 2px solid var(--ink-brown);
+  border: var(--border-retro);
   box-shadow: 3px 3px 0 var(--ink-brown);
   font-weight: 700;
   text-transform: uppercase;
@@ -291,22 +482,6 @@ h1, h2, h3, .title {
     gap: 1rem;
 }
 
-#socials-container .icon { 
-  filter: sepia(60%) saturate(80%) hue-rotate(-10deg) contrast(90%); 
-}
-
-/* ICONS */
-
-.icon {
-    cursor: pointer;
-    height: 2rem;
-    transition: transform 0.1s linear;
-}
-
-.icon:hover {
-  transform: scale(1.2);
-}
-
 /* BUTTONS */
 .btn-container {
     display: flex;
@@ -317,10 +492,10 @@ h1, h2, h3, .title {
 .btn {
     font-family: var(--body-font);
     font-weight: 600;
-    transition: all 300ms ease;
+    transition: var(--transition-base);
     padding: 1rem;
     border-radius: 6px; 
-    border: 2px solid var(--ink-brown);
+    border: var(--border-retro);
     background: #FFF3D6;
     color: var(--ink-brown);
     box-shadow: 3px 3px 0 var(--ink-brown); /* Creates the solid shadow */
@@ -386,10 +561,10 @@ h1, h2, h3, .title {
   flex: 1;
   background: #fff7e8;
   border-radius: 10px;
-  border: 2px solid var(--ink-brown);
+  border: var(--border-retro);
   text-align: center;
-  box-shadow: 8px 8px 0 var(--ink-brown);
-  transition: all 300ms ease;
+  box-shadow: var(--shadow-retro);
+  transition: var(--transition-base);
   transform: rotate(-0.3 deg);
 }
 
@@ -475,7 +650,7 @@ article .icon{
 
 .project-img:hover {
   transform: scale(1.02) rotate(-0.5deg);
-  transition: transform 300ms ease;
+  transition: var(--transition-transform);
 }
 
 .project-title {
@@ -501,7 +676,7 @@ article .icon{
     display: flex;
     justify-content: center;
     border-radius: 2rem;
-    border: 2px solid var(--ink-brown);
+    border: var(--border-retro);
     border-color: rgb(163, 163, 163);
     background: #fff7E8;
     margin: 2rem auto;
@@ -537,72 +712,6 @@ footer {
 
 footer p {
     text-align: center;
-}
-
-/* DARK MODE STYLES */
-body.dark-mode {
-  background: #14110F;
-  color: #F6EBD9;
-}
-
-body.dark-mode p {
-  color: #E0E0E0;
-}
-
-body.dark-mode .logo {
-  color: #FFF;
-}
-
-body.dark-mode .details-container {
-  background: #2A2420;
-  border-color: #D9C38B;
-}
-
-body.dark-mode .color-container {
-  background: #2a2a2a;
-}
-
-body.dark-mode .project-title {
-  color: #fff;
-}
-
-body.dark-mode a {
-  color: #fff;
-}
-
-body.dark-mode a:hover {
-  color: var(--secondary-accent);
-}
-
-body.dark-mode .contact-info-upper-container {
-  background: #2a2a2a;
-  border: 1px solid #555;
-}
-
-body.dark-mode .contact-info-container p a {
-  color: #fff;
-}
-
-body.dark-mode .icon {
-  filter: invert(1) brightness(2);
-}
-
-body.dark-mode .btn-color-2 {
-  color: #fff;
-  border-color: #fff;
-}
-
-body.dark-mode .btn-color-2:hover {
-  color: #1a1a1a;
-  background: #fff;
-}
-
-body.dark-mode .experience-sub-title {
-  color: #e0e0e0;
-}
-
-body.dark-mode #experience .icon {
-  filter: invert(1) brightness(2);
 }
 
 /* TOGGLE SWITCH */
@@ -776,10 +885,24 @@ input:checked + .slider:before {
   }
 }
 
+/* ============================================
+   REDUCED MOTION SUPPORT
+   ============================================ */
 @media (prefers-reduced-motion: reduce) {
-  #main-title span, #sub-title span {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  #main-title span,
+  #sub-title span {
     animation: none !important;
-    opacity: 1; transform: none;
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -792,7 +915,7 @@ section { border-top: 4px solid var(--ink-brown); }
 #about, #projects { background: var(--section-alt); }
 
 section + section {
-  border-top: 2px solid var(--ink-brown);
+  border-top: var(--border-retro);
 }
 
 body::before {
@@ -806,69 +929,9 @@ body::before {
   opacity: .08;
 }
 
-body.dark-mode::before {
-  display: none;
-}
-
 @media (max-width: 1400px) {
   section { margin: 0 6rem; }
 }
 @media (max-width: 1100px) {
   section { margin: 0 3rem; }
-}
-
-/* --- Dark mode fixes & polish --- */
-
-/* 1) Override light nav gradient + borders */
-body.dark-mode nav {
-  background: linear-gradient(180deg, #1c1815 0%, #14110F 100%);
-  border-bottom-color: #3a2f29;
-}
-
-/* 2) Section backgrounds & rules */
-body.dark-mode section { border-top-color: #3a2f29; }
-body.dark-mode #about,
-body.dark-mode #projects { 
-  background: #1e1a17;  /* replaces the tan from light mode */
-}
-
-/* 3) Buttons (the base cream looked too bright on dark) */
-body.dark-mode .btn {
-  background: #2A2420;
-  color: #F6EBD9;
-  border-color: #D9C38B;
-  box-shadow: 3px 3px 0 #3a2f29;
-}
-body.dark-mode .btn:hover {
-  box-shadow: 6px 6px 0 #3a2f29;
-}
-
-/* 4) Card borders/text already handled; unify 'color-container' border */
-body.dark-mode .color-container {
-  background: #2A2420;
-  border-color: #3a2f29;
-}
-
-/* 5) Contact panel contrast */
-body.dark-mode .contact-info-upper-container {
-  background: #2A2420;
-  border-color: #3a2f29;
-}
-
-/* 6) Links */
-body.dark-mode a { color: #F6EBD9; }
-body.dark-mode a:hover { color: var(--secondary-accent); }
-
-/* 7) Optional: darker shadow for images/cards in dark */
-body.dark-mode .details-container,
-body.dark-mode .photo-item {
-  box-shadow: 8px 8px 0 #3a2f29;
-}
-
-body.dark-mode h1 {
-  color: #F6EBD9;
-}
-
-body.dark-mode h3 {
-  color: #F6EBD9;
 }

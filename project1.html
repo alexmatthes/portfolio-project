@@ -6,7 +6,25 @@
     <title>Personal Portfolio Project</title>
     <link rel="icon" type="image/png" href="./assets/favicon.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css">
+    <link rel="stylesheet" href="mediaqueries.css" media="screen">
+
+    <meta name="description" content="Personal Portfolio Website - A responsive, accessible portfolio built with HTML, CSS, and JavaScript by Alex Matthes.">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      "name": "Personal Portfolio Website",
+      "description": "A responsive, accessible portfolio website built with HTML, CSS, and JavaScript",
+      "author": {
+        "@type": "Person",
+        "name": "Alex Matthes"
+      },
+      "programmingLanguage": ["HTML", "CSS", "JavaScript"],
+      "url": "https://github.com/alexmatthes/portfolio-project"
+    }
+    </script>
 </head>
 <body>
     <nav id="desktop-nav">
@@ -35,7 +53,7 @@
     </nav>
 
     <nav id="hamburger-nav">
-        <div class="logo">Alex Matthes</div>
+        <div class="logo">A<span>M</span></div>
 
         <div class="hamburger-menu">
             <div class="hamburger-icon" onclick="toggleMenu()">
