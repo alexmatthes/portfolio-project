@@ -1,342 +1,534 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+	<head>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-K9NHVBCP5W"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'G-K9NHVBCP5W');
+		</script>
+		<!-- End Google Tag -->
 
-    <!-- Google tag (gtag.js) --> 
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9NHVBCP5W"></script>
-     <script> 
-     window.dataLayer = window.dataLayer || []; 
-     function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-K9NHVBCP5W'); 
-     </script>
-    <!-- End Google Tag -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alex Matthes Portfolio</title>
+		<link rel="icon" type="image/png" href="./assets/favicon.svg" />
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Matthes Portfolio</title>
-    <link rel="icon" type="image/png" href="./assets/favicon.svg">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="mediaqueries.css" media="screen" />
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediaqueries.css" media="screen">
+		<!-- Basic SEO -->
+		<meta
+			name="description"
+			content="Alex Matthes - Computer Science student at Ohio State University. View my portfolio featuring web development projects, C programming, and software engineering work. Open to internship opportunities."
+		/>
+		<meta
+			name="keywords"
+			content="Alex Matthes, computer science, portfolio, Ohio State, Java, C++, frontend, student developer"
+		/>
+		<meta name="author" content="Alex Matthes" />
 
-    <!-- Basic SEO -->
-    <meta name="description" content="Alex Matthes - Computer Science student at Ohio State University. View my portfolio featuring web development projects, C programming, and software engineering work. Open to internship opportunities.">
-    <meta name="keywords" content="Alex Matthes, computer science, portfolio, Ohio State, Java, C++, frontend, student developer">
-    <meta name="author" content="Alex Matthes">
+		<!-- Open Graph (for social media sharing) -->
+		<meta property="og:title" content="Alex Matthes | Portfolio" />
+		<meta
+			property="og:description"
+			content="Computer Science student portfolio with projects, experience, and resume."
+		/>
+		<meta
+			property="og:image"
+			content="https://alexmatthes.dev/assets/AMLogo.png"
+		/>
+		<meta property="og:url" content="https://alexmatthes.dev" />
+		<meta property="og:type" content="website" />
 
-    <!-- Open Graph (for social media sharing) -->
-    <meta property="og:title" content="Alex Matthes | Portfolio">
-    <meta property="og:description" content="Computer Science student portfolio with projects, experience, and resume.">
-    <meta property="og:image" content="https://alexmatthes.dev/assets/AMLogo.png">
-    <meta property="og:url" content="https://alexmatthes.dev">
-    <meta property="og:type" content="website">
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Alex Matthes | Portfolio" />
+		<meta
+			name="twitter:description"
+			content="Computer Science student at Ohio State University. Check out my work and skills."
+		/>
+		<meta
+			name="twitter:image"
+			content="https://alexmatthes.dev/assets/AMLogo.png"
+		/>
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Alex Matthes | Portfolio">
-    <meta name="twitter:description" content="Computer Science student at Ohio State University. Check out my work and skills.">
-    <meta name="twitter:image" content="https://alexmatthes.dev/assets/AMLogo.png">
+		<!-- Give soul to robot overlords -->
+		<meta name="robots" content="index, follow" />
 
-    <!-- Give soul to robot overlords -->
-    <meta name="robots" content="index, follow" />
+		<!-- Structured Data for SEO -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Alex Matthes",
+				"jobTitle": "Computer Science and Engineering Student",
+				"description": "Computer Science student at The Ohio State University seeking software development internship opportunities",
+				"url": "https://alexmatthes.dev",
+				"image": "https://alexmatthes.dev/assets/profile-picture.jpeg",
+				"alumniOf": {
+					"@type": "CollegeOrUniversity",
+					"name": "The Ohio State University"
+				},
+				"knowsAbout": [
+					"Java",
+					"C++",
+					"HTML",
+					"CSS",
+					"JavaScript",
+					"Software Development"
+				],
+				"sameAs": [
+					"https://linkedin.com/in/matthesdev",
+					"https://github.com/alexmatthes"
+				],
+				"email": "mailto:matthes.20@buckeyemail.osu.edu"
+			}
+		</script>
+	</head>
 
-     <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Alex Matthes",
-      "jobTitle": "Computer Science and Engineering Student",
-      "description": "Computer Science student at The Ohio State University seeking software development internship opportunities",
-      "url": "https://alexmatthes.dev",
-      "image": "https://alexmatthes.dev/assets/profile-picture.jpeg",
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "The Ohio State University"
-      },
-      "knowsAbout": ["Java", "C++", "HTML", "CSS", "JavaScript", "Software Development"],
-      "sameAs": [
-        "https://linkedin.com/in/matthesdev",
-        "https://github.com/alexmatthes"
-      ],
-      "email": "mailto:matthes.20@buckeyemail.osu.edu"
-    }
-    </script>
-</head>
+	<body>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
 
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+		<nav id="desktop-nav" aria-label="Main Navigation">
+			<a href="./index" class="logo-link" aria-current="page">
+				<div class="logo">A<span>M</span></div>
+			</a>
 
-    <nav id="desktop-nav" aria-label="Main Navigation">
-        <a href="./index" class="logo-link" aria-current="page">
-            <div class="logo">A<span>M</span></div>
-        </a>
+			<div>
+				<ul class="nav-links">
+					<li><a href="#about">About</a></li>
+					<li><a href="#experience">Experience</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
 
-        <div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+			<div class="theme-switch-wrapper">
+				<span id="sun-icon">☀️</span>
+				<label class="theme-switch" for="checkbox">
+					<input type="checkbox" id="checkbox" />
+					<div class="slider round"></div>
+				</label>
+				<span id="mood-icon">🌙</span>
+			</div>
+		</nav>
 
-        <div class="theme-switch-wrapper">
-          <span id="sun-icon">☀️</span>
-          <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-          </label>
-          <span id="mood-icon">🌙</span> 
-        </div>
+		<nav id="hamburger-nav" aria-label="Hamburger Navigation Menu">
+			<div class="logo">A<span>M</span></div>
 
-    </nav>
+			<div class="hamburger-menu">
+				<div class="hamburger-icon" onclick="toggleMenu()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="menu-links">
+					<ul>
+						<li><a href="#about" onclick="toggleMenu()">About</a></li>
+						<li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+						<li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+						<li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-    <nav id="hamburger-nav" aria-label="Hamburger Navigation Menu">
-        <div class="logo">A<span>M</span></div>
+		<main id="main-content">
+			<section id="profile">
+				<div class="section__pic-container">
+					<img
+						src="./assets/profile-picture.webp"
+						alt="Headshot of Alex Matthes"
+						fetchpriority="high"
+					/>
+				</div>
 
-        <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu-links">
-                <ul>
-                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                    <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+				<div class="section__text">
+					<p class="section__text__p1">Hello, I'm</p>
+					<h1 class="title" id="main-title">
+						<span>A</span><span>l</span><span>e</span><span>x</span
+						><span>&nbsp;</span><span>M</span><span>a</span><span>t</span
+						><span>t</span><span>h</span><span>e</span><span>s</span>
+					</h1>
+					<p class="section__text__p2" id="sub-title">
+						<span>O</span><span>S</span><span>U</span><span>&nbsp;</span
+						><span>C</span><span>o</span><span>m</span><span>p</span
+						><span>u</span><span>t</span><span>e</span><span>r</span
+						><span>&nbsp;</span><span>S</span><span>c</span><span>i</span
+						><span>e</span><span>n</span><span>c</span><span>e</span
+						><span>&nbsp;</span><span>|</span><span>&nbsp;</span><span>P</span
+						><span>r</span><span>o</span><span>b</span><span>l</span
+						><span>e</span><span>m</span><span>&nbsp;</span><span>S</span
+						><span>o</span><span>l</span><span>v</span><span>e</span
+						><span>r</span>
+					</p>
+					<div class="btn-container">
+						<button
+							class="btn btn-color-2"
+							onclick="window.open('./assets/alexMatthesResume.pdf')"
+						>
+							Open Resume
+						</button>
+						<button
+							class="btn btn-color-1"
+							onclick="location.href='./#contact'"
+						>
+							Contact Info
+						</button>
+					</div>
+					<div id="socials-container">
+						<img
+							src="./assets/linkedin.svg"
+							alt="My Linkedin Profile"
+							class="icon"
+							onclick="location.href='https://www.linkedin.com/in/matthesdev/'"
+						/>
+						<img
+							src="./assets/github.svg"
+							alt="My Github Page"
+							class="icon"
+							onclick="location.href='https://github.com/alexmatthes'"
+						/>
+					</div>
+				</div>
+			</section>
 
-    <main id="main-content">
-      <section id="profile">
-          <div class="section__pic-container">
-              <img src="./assets/profile-picture.webp" alt="Headshot of Alex Matthes" fetchpriority="high"/>
-          </div>
+			<section id="about">
+				<p class="section__text__p1">Get To Know More</p>
+				<h1 class="title">About Me</h1>
+				<div class="section-container">
+					<div class="section__pic-container">
+						<img
+							src="./assets/about-picture.webp"
+							alt="Alex Matthes performing on a stage in a theatrical production"
+							class="about-pic"
+						/>
+					</div>
+					<div class="about-details-container">
+						<div class="about-containers">
+							<div class="details-container">
+								<img
+									src="./assets/experience.svg"
+									alt="Icon representing experience"
+									class="icon"
+								/>
+								<h3>Experience</h3>
+								<p>Student Technology Assistant <br />Resturaunt Host</p>
+							</div>
 
-          <div class="section__text">
-              <p class="section__text__p1">Hello, I'm</p>
-              <h1 class="title" id="main-title">
-                <span>A</span><span>l</span><span>e</span><span>x</span><span>&nbsp;</span><span>M</span><span>a</span><span>t</span><span>t</span><span>h</span><span>e</span><span>s</span>
-              </h1>
-              <p class="section__text__p2" id="sub-title">
-                 <span>O</span><span>S</span><span>U</span><span>&nbsp;</span><span>C</span><span>o</span><span>m</span><span>p</span><span>u</span><span>t</span><span>e</span><span>r</span><span>&nbsp;</span><span>S</span><span>c</span><span>i</span><span>e</span><span>n</span><span>c</span><span>e</span><span>&nbsp;</span><span>|</span><span>&nbsp;</span><span>P</span><span>r</span><span>o</span><span>b</span><span>l</span><span>e</span><span>m</span><span>&nbsp;</span><span>S</span><span>o</span><span>l</span><span>v</span><span>e</span><span>r</span> 
-                </p>
-              <div class="btn-container">
-                  <button class="btn btn-color-2" onclick="window.open('./assets/alexMatthesResume.pdf')">Open Resume</button>
-                  <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
-              </div>
-              <div id="socials-container">
-                  <img src="./assets/linkedin.svg" alt="My Linkedin Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/matthesdev/'">
-                  <img src="./assets/github.svg" alt="My Github Page" class="icon" onclick="location.href='https://github.com/alexmatthes'">
-              </div>
-          </div>
-      </section>
+							<div class="details-container">
+								<img
+									src="./assets/education.svg"
+									alt="Icon representing education"
+									class="icon"
+								/>
+								<h3>Education</h3>
+								<p>
+									B.S. in Computer Science and Engineering and Theatre Minor (In
+									Progress)<br />High School Diploma
+								</p>
+							</div>
 
-      <section id="about">
-          <p class="section__text__p1">Get To Know More</p>
-          <h1 class="title">About Me</h1>
-          <div class="section-container">
-              <div class="section__pic-container">
-                  <img src="./assets/about-picture.webp" alt="Alex Matthes performing on a stage in a theatrical production" class="about-pic"/>
-              </div>
-              <div class="about-details-container">
-                  <div class="about-containers">
-                      <div class="details-container"> 
-                          <img src="./assets/experience.svg" alt="Icon representing experience" class="icon"/>
-                          <h3>Experience</h3>
-                          <p>Student Technology Assistant </br>Resturaunt Host</p>
-                      </div>
+							<div class="details-container">
+								<img
+									src="./assets/hobbies.svg"
+									alt="Icon depicting various hobbies"
+									class="icon"
+								/>
+								<h3>Hobbies</h3>
+								<p>Photography<br />Theatre & Acting<br />Fitness<br />Music</p>
+								<div class="btn-container" style="margin-top: 1rem">
+									<button
+										class="btn btn-color-2 project-btn"
+										onclick="window.open('photography-portfolio', '_blank')"
+									>
+										See My Photos
+									</button>
+								</div>
+							</div>
+						</div>
 
-                      <div class="details-container">
-                          <img src="./assets/education.svg" alt="Icon representing education" class="icon"/>
-                          <h3>Education</h3>
-                          <p>B.S. in Computer Science and Engineering and Theatre Minor (In Progress)</br>High School Diploma</p>
-                      </div>
+						<div class="text-container">
+							<p>
+								As a Computer Science and Engineering student at The Ohio State
+								University, I thrive on the logic and problem-solving that
+								coding provides. But it's my minor in Theatre that has taught me
+								the most about creativity, collaboration, and storytelling. I
+								believe that the best technology is not just functional, but
+								also tells a story and connects with people. I'm excited to
+								bring this unique perspective to a software developer
+								internship.
+							</p>
+						</div>
+					</div>
+				</div>
+				<img
+					src="./assets/arrow.svg"
+					alt="Arrow Icon"
+					class="icon arrow"
+					onclick="location.href='#experience'"
+				/>
+			</section>
 
-                      <div class="details-container">
-                        <img src="./assets/hobbies.svg" alt="Icon depicting various hobbies" class="icon"/>
-                        <h3>Hobbies</h3>
-                        <p>Photography</br>Theatre & Acting</br>Fitness</br>Music</p>
-                        <div class="btn-container" style="margin-top: 1rem;">
-                          <button class="btn btn-color-2 project-btn" onclick="window.open('photography-portfolio', '_blank')">See My Photos</button>
-                        </div>
-                      </div>
-                  </div>
+			<section id="experience">
+				<p class="section__text__p1">Explore My</p>
+				<h1 class="title">Experience</h1>
+				<div class="experience-details-container">
+					<div class="about-containers">
+						<div class="details-container">
+							<h2 class="experience-sub-title">Languages</h2>
+							<div class="article-container">
+								<article>
+									<img
+										src="./assets/checkmark.svg"
+										alt="Checkmark Icon"
+										class="icon"
+									/>
+									<div>
+										<h3>Java</h3>
+										<p>Experienced</p>
+									</div>
+								</article>
+								<article>
+									<img
+										src="./assets/checkmark.svg"
+										alt="Checkmark Icon"
+										class="icon"
+									/>
+									<div>
+										<h3>C++</h3>
+										<p>Experienced</p>
+									</div>
+								</article>
+								<article>
+									<img
+										src="./assets/checkmark.svg"
+										alt="Checkmark Icon"
+										class="icon"
+									/>
+									<div>
+										<h3>HTML</h3>
+										<p>Experienced</p>
+									</div>
+								</article>
+								<article>
+									<img
+										src="./assets/checkmark.svg"
+										alt="Checkmark Icon"
+										class="icon"
+									/>
+									<div>
+										<h3>CSS</h3>
+										<p>Experienced</p>
+									</div>
+								</article>
+							</div>
+						</div>
 
-                  <div class="text-container">
-                      <p>As a Computer Science and Engineering student at The Ohio State University, I thrive on the logic 
-                        and problem-solving that coding provides. But it's my minor in Theatre that has taught me the most 
-                        about creativity, collaboration, and storytelling. I believe that the best technology is not just 
-                        functional, but also tells a story and connects with people. I'm excited to bring this unique 
-                        perspective to a software developer internship.</p>
-                  </div>
-              </div>
-          </div>
-          <img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" onclick="location.href='#experience'"/>
-      </section>
+						<div class="details-container">
+							<h2 class="experience-sub-title">Developer Tools</h2>
+							<div class="article-container">
+								<article>
+									<img
+										src="./assets/checkmark.svg"
+										alt="Checkmark Icon"
+										class="icon"
+									/>
+									<div>
+										<h3>Visual Studio</h3>
+										<p>Experienced</p>
+									</div>
+								</article>
+								<article>
+									<img
+										src="./assets/checkmark.svg"
+										alt="Checkmark Icon"
+										class="icon"
+									/>
+									<div>
+										<h3>VS Code</h3>
+										<p>Experienced</p>
+									</div>
+								</article>
+								<article>
+									<img
+										src="./assets/checkmark.svg"
+										alt="Checkmark Icon"
+										class="icon"
+									/>
+									<div>
+										<h3>Eclipse</h3>
+										<p>Experienced</p>
+									</div>
+								</article>
+								<article>
+									<img
+										src="./assets/checkmark.svg"
+										alt="Checkmark Icon"
+										class="icon"
+									/>
+									<div>
+										<h3>MATLAB</h3>
+										<p>Experienced</p>
+									</div>
+								</article>
+								<article>
+									<img
+										src="./assets/checkmark.svg"
+										alt="Checkmark Icon"
+										class="icon"
+									/>
+									<div>
+										<h3>Arduino</h3>
+										<p>Experienced</p>
+									</div>
+								</article>
+							</div>
+						</div>
+					</div>
+				</div>
+				<img
+					src="./assets/arrow.svg"
+					alt="Arrow Icon"
+					class="icon arrow"
+					onclick="location.href='#projects'"
+				/>
+			</section>
 
-      <section id="experience">
-          <p class="section__text__p1">Explore My</p>
-          <h1 class="title">Experience</h1>
-          <div class="experience-details-container">
-              <div class="about-containers">
-                  <div class="details-container">
-                      <h2 class="experience-sub-title">Languages</h2>
-                      <div class="article-container">
-                          <article>
-                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
-                              <div>
-                                  <h3>Java</h3>
-                                  <p>Experienced</p>
-                              </div>
-                          </article>
-                          <article>
-                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
-                              <div>
-                                  <h3>C++</h3>
-                                  <p>Experienced</p>
-                              </div>
-                          </article>
-                          <article>
-                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
-                              <div>
-                                  <h3>HTML</h3>
-                                  <p>Experienced</p>
-                              </div>
-                          </article>
-                          <article>
-                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
-                              <div>
-                                  <h3>CSS</h3>
-                                  <p>Experienced</p>
-                              </div>
-                          </article>
-                      </div>
-                  </div>
+			<section id="projects">
+				<p class="section__text__p1">Browse My Recent</p>
+				<h1 class="title">Projects</h1>
+				<div class="experience-details-container">
+					<div class="about-containers">
+						<div class="details-container color-container">
+							<div class="article-container">
+								<img
+									src="./assets/website-screenshot.webp"
+									alt="Screenshot of the personal portfolio website project"
+									class="project-img"
+								/>
+							</div>
+							<h2 class="experience-sub-title project-title">
+								Personal Portfolio
+							</h2>
+							<p>
+								This portfolio showcases my web development skills using HTML,
+								CSS, and JavaScript. It's responsive, accessible, and
+								SEO-optimized.
+							</p>
+							<div class="btn-container">
+								<button
+									class="btn btn-color-2 project-btn"
+									onclick="location.href='https://github.com/alexmatthes/portfolio-project'"
+								>
+									Github
+								</button>
+								<button
+									class="btn btn-color-2 project-btn"
+									onclick="location.href='./project1'"
+								>
+									Read More
+								</button>
+							</div>
+						</div>
 
-                  <div class="details-container">
-                      <h2 class="experience-sub-title">Developer Tools</h2>
-                      <div class="article-container">
-                          <article>
-                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
-                              <div>
-                                  <h3>Visual Studio</h3>
-                                  <p>Experienced</p>
-                              </div>
-                          </article>
-                          <article>
-                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
-                              <div>
-                                  <h3>VS Code</h3>
-                                  <p>Experienced</p>
-                              </div>
-                          </article>
-                          <article>
-                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
-                              <div>
-                                  <h3>Eclipse</h3>
-                                  <p>Experienced</p>
-                              </div>
-                          </article>
-                          <article>
-                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
-                              <div>
-                                  <h3>MATLAB</h3>
-                                  <p>Experienced</p>
-                              </div>
-                          </article>
-                          <article>
-                              <img src="./assets/checkmark.svg" alt="Checkmark Icon" class="icon"/>
-                              <div>
-                                  <h3>Arduino</h3>
-                                  <p>Experienced</p>
-                              </div>
-                          </article>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" onclick="location.href='#projects'"/>
-      </section>
+						<div class="details-container color-container">
+							<div class="article-container">
+								<img
+									src="./assets/writeAM-screenshot.webp"
+									alt="Screenshot of the writeAM text editor project"
+									class="project-img"
+								/>
+							</div>
+							<h2 class="experience-sub-title project-title">
+								writeAM Text Editor
+							</h2>
+							<p>
+								A lightweight, minimalist text editor that runs directly in your
+								terminal, built from scratch in C with zero external library
+								dependencies.
+							</p>
+							<div class="btn-container">
+								<button
+									class="btn btn-color-2 project-btn"
+									onclick="location.href='https://github.com/alexmatthes/writeAM-text-editor'"
+								>
+									Github
+								</button>
+								<button
+									class="btn btn-color-2 project-btn"
+									onclick="location.href='./project2'"
+								>
+									Read More
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<img
+					src="./assets/arrow.svg"
+					alt="Arrow Icon"
+					class="icon arrow"
+					onclick="location.href='#contact'"
+				/>
+			</section>
 
-      <section id="projects">
-          <p class="section__text__p1">Browse My Recent</p>
-          <h1 class="title">Projects</h1>
-          <div class="experience-details-container">
-            <div class="about-containers">
+			<section id="contact">
+				<p class="section__text__p1">Get In Touch</p>
+				<h1 class="title">Contact Me</h1>
 
-              <div class="details-container color-container">
-                  <div class="article-container">
-                      <img src="./assets/website-screenshot.webp" alt="Screenshot of the personal portfolio website project" class="project-img"/>
-                  </div>
-                  <h2 class="experience-sub-title project-title">Personal Portfolio</h2>
-                  <p>This portfolio showcases my web development skills using HTML, CSS, and JavaScript. It's responsive, accessible, and SEO-optimized.</p>
-                  <div class="btn-container">
-                      <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alexmatthes/portfolio-project'">Github</button>
-                      <button class="btn btn-color-2 project-btn" onclick="location.href='./project1'">Read More</button>
-                  </div>
-                </div> 
+				<div class="contact-info-upper-container">
+					<div class="contact-info-container">
+						<img
+							src="./assets/email.svg"
+							alt="Email Icon"
+							class="icon contact-icon email-icon"
+						/>
+						<p>
+							<a href="mailto:matthes.20@buckeyemail.osu.edu"
+								>matthes.20@buckeyemail.osu.edu</a
+							>
+						</p>
+					</div>
+				</div>
 
-              <div class="details-container color-container">
-                  <div class="article-container">
-                      <img src="./assets/writeAM-screenshot.webp" alt="Screenshot of the writeAM text editor project" class="project-img"/>
-                  </div>
-                  <h2 class="experience-sub-title project-title">writeAM Text Editor</h2>
-                  <p>A lightweight, minimalist text editor that runs directly in your terminal, built from scratch in C with zero external library dependencies.</p>
-                  <div class="btn-container">
-                      <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alexmatthes/writeAM-text-editor'">Github</button>
-                      <button class="btn btn-color-2 project-btn" onclick="location.href='./project2'">Read More</button>
-                  </div>
-                </div> 
+				<div class="contact-info-container">
+					<img
+						src="./assets/linkedin.svg"
+						alt="Linkedin Icon"
+						class="icon contact-icon"
+					/>
+					<p><a href="https://linkedin.com/in/matthesdev">Linkedin</a></p>
+				</div>
+			</section>
+		</main>
 
-              </div>
-          </div>
-          <img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" onclick="location.href='#contact'"/>
-      </section>
+		<footer>
+			<nav aria-label="Footer Navigation Links">
+				<div class="nav-links-container">
+					<ul class="nav-links">
+						<li><a href="#about">About</a></li>
+						<li><a href="#experience">Experience</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div>
+			</nav>
 
-      <section id="contact">
-          <p class="section__text__p1">Get In Touch</p>
-          <h1 class="title">Contact Me</h1>
+			<p>Copyright &#169; 2025 Alex Matthes. All Rights Reserved</p>
+		</footer>
 
-          <div class="contact-info-upper-container">
-              <div class="contact-info-container">
-                  <img src="./assets/email.svg" alt="Email Icon" class="icon contact-icon email-icon"/>
-                  <p><a href="mailto:matthes.20@buckeyemail.osu.edu">matthes.20@buckeyemail.osu.edu</a></p>
-              </div>
-          </div>
-
-          <div class="contact-info-container">
-              <img src="./assets/linkedin.svg" alt="Linkedin Icon" class="icon contact-icon"/>
-              <p><a href="https://linkedin.com/in/matthesdev">Linkedin</a></p>
-          </div>
-          
-      </section>
-
-    </main>
-
-    <footer>
-        <nav aria-label="Footer Navigation Links">
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-
-        <p>Copyright &#169; 2025 Alex Matthes. All Rights Reserved</p>
-    </footer>
-
-    <script src="script.js"></script>
-
-</body>
+		<script src="script.js"></script>
+	</body>
 </html>
