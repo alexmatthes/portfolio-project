@@ -24,16 +24,16 @@
 	--spacing-xxl: 6rem;
 
 	/* Border Radius */
-	--radius-sm: 6px;
-	--radius-md: 10px;
-	--radius-lg: 2rem;
+	--radius-sm: 4px;
+	--radius-md: 8px;
+	--radius-lg: 12px;
 	--radius-full: 999px;
 
 	/* Shadows */
-	--shadow-sm: 3px 3px 0 var(--ink-brown);
-	--shadow-md: 6px 6px 0 var(--ink-brown);
+	--shadow-sm: 2px 2px 0 var(--ink-brown);
+	--shadow-md: 4px 4px 0 var(--ink-brown);
 	--shadow-lg: 8px 8px 0 var(--ink-brown);
-	--shadow-xl: 10px 10px 0 var(--ink-brown);
+	--shadow-lg: 6px 6px 0 var(--ink-brown);
 	--shadow-retro: var(--shadow-lg);
 
 	/* Effects */
@@ -42,6 +42,10 @@
 	--border-retro: 2px solid var(--ink-brown);
 	--border-width: 2px;
 	--border-width-thick: 4px;
+
+	/* Editorial Spacing */
+	--tracking-tight: -0.03em; /* For big headlines */
+	--leading-loose: 1.6; /* For body text reading */
 }
 
 /* ============================================
@@ -148,8 +152,8 @@ html {
 
 p {
 	color: var(--text-color);
-	line-height: 1.7;
-	letter-spacing: 0.15px;
+	line-height: var(--leading-loose); /* easier to read */
+	font-weight: 500; /* Slightly heavier ink weight looks more "printed" */
 }
 
 /* TRANSITIONS */
@@ -430,8 +434,8 @@ h3,
 .title {
 	font-family: var(--heading-font);
 	font-weight: 900;
-	font-feature-settings: 'liga', 'kern', 'ss03';
 	color: var(--text-color);
+	letter-spacing: var(--tracking-tight); /* Adds the retro punch */
 }
 
 #socials-container {
@@ -519,22 +523,27 @@ h3,
 .details-container {
 	padding: 1.5rem;
 	flex: 1;
-	background: #fff7e8;
+	background: #fff7e8; /* Keep the paper color */
 	border-radius: var(--radius-md);
-	border: var(--border-retro);
+
+	/* The "Ink" Border */
+	border: 2px solid var(--ink-brown);
+
+	/* The "Lifted Paper" Shadow */
+	box-shadow: var(--shadow-md);
+
 	text-align: center;
-	box-shadow: var(--shadow-retro);
 	transition: var(--transition-base);
-	transform: rotate(-0.3deg);
 }
 
 .details-container:nth-child(even) {
 	transform: rotate(0.3deg);
 }
 
+/* Tactile Hover Effect */
 .details-container:hover {
-	transform: translate(-4px, -4px) rotate(-0.3deg);
-	box-shadow: var(--shadow-xl);
+	transform: translate(-2px, -2px); /* Physically moves up */
+	box-shadow: var(--shadow-lg); /* Shadow grows to match distance */
 }
 
 .section-container {
@@ -569,6 +578,17 @@ h3,
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
+}
+
+.experience-details-container article {
+	border-bottom: 1px dashed var(--ink-brown); /* Ruled paper look */
+	padding-bottom: 0.5rem;
+	width: 100%; /* Full width lines */
+	justify-content: flex-start; /* Align text to left */
+}
+
+.experience-details-container article .icon {
+	margin-right: 1rem; /* Space after checkmark */
 }
 
 .article-container {
@@ -817,12 +837,11 @@ input:checked + .slider:before {
 }
 
 /*Tactile button press*/
-
 .btn:active {
-	transform: translateY(2px) scale(0.98);
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	/* When pressed, the button moves DOWN and the shadow disappears */
+	transform: translate(2px, 2px);
+	box-shadow: 0 0 0 var(--text-color);
 }
-
 /*Staggered Text Animation*/
 #main-title span {
 	display: inline-block;
@@ -893,11 +912,11 @@ body::before {
 	position: fixed;
 	inset: 0;
 	pointer-events: none;
-	background: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px) 0 0/3px
-			3px,
-		radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px) 1px 1px/3px 3px;
+	background: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px) 0 0/3px 3px, radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px) 1px 1px/3px 3px;
 	mix-blend-mode: multiply;
-	opacity: 0.08;
+	opacity: 0.05;
+	z-index: 999;
+	pointer-events: none;
 }
 
 /* ============================================
@@ -910,7 +929,9 @@ body.dark-mode {
 }
 
 body.dark-mode::before {
-	display: none;
+	display: block; /* Don't hide it! */
+	opacity: 0.03; /* Subtler grain for dark mode */
+	mix-blend-mode: overlay; /* Blends better with dark colors */
 }
 
 /* Navigation & Headers */
