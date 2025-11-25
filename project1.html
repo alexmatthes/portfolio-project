@@ -31,46 +31,46 @@
     </script>
 </head>
 <body>
-    <nav id="desktop-nav">
-        <a href="./index" class="logo-link">
+    <nav id="desktop-nav" aria-label="Main Navigation">
+        <a href="./index.html" class="logo-link">
             <div class="logo">A<span>M</span></div>
         </a>
 
         <div>
             <ul class="nav-links">
-                <li><a href="./index.html/#about">About</a></li>
-                <li><a href="./index.html/#experience">Experience</a></li>
-                <li><a href="./index.html/#projects">Projects</a></li>
-                <li><a href="./index.html/#contact">Contact</a></li>
+                <li><a href="./index.html#about">About</a></li>
+                <li><a href="./index.html#experience">Experience</a></li>
+                <li><a href="./index.html#projects">Projects</a></li>
+                <li><a href="./index.html#contact">Contact</a></li>
             </ul>
         </div>
 
         
         <div class="theme-switch-wrapper">
-          <span id="sun-icon">☀️</span>
-          <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
+          <span id="sun-icon" aria-hidden="true">☀️</span>
+          <label class="theme-switch" for="checkbox" aria-label="Toggle dark mode">
+            <input type="checkbox" id="checkbox" aria-label="Dark mode toggle" />
             <div class="slider round"></div>
           </label>
-          <span id="mood-icon">🌙</span> 
+          <span id="mood-icon" aria-hidden="true">🌙</span> 
         </div>
     </nav>
 
-    <nav id="hamburger-nav">
+    <nav id="hamburger-nav" aria-label="Hamburger Navigation Menu">
         <div class="logo">A<span>M</span></div>
 
         <div class="hamburger-menu">
-            <div class="hamburger-icon" onclick="toggleMenu()">
+            <div class="hamburger-icon" data-action="toggle-menu" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <div class="menu-links">
                 <ul>
-                    <li><a href="./index.html/#about" onclick="toggleMenu()">About</a></li>
-                    <li><a href="./index.html/#experience" onclick="toggleMenu()">Experience</a></li>
-                    <li><a href="./index.html/#projects" onclick="toggleMenu()">Projects</a></li>
-                    <li><a href="./index.html/#contact" onclick="toggleMenu()">Contact</a></li>
+                    <li><a href="./index.html#about" data-action="close-menu">About</a></li>
+                    <li><a href="./index.html#experience" data-action="close-menu">Experience</a></li>
+                    <li><a href="./index.html#projects" data-action="close-menu">Projects</a></li>
+                    <li><a href="./index.html#contact" data-action="close-menu">Contact</a></li>
                 </ul>
             </div>
         </div>

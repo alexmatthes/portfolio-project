@@ -71,7 +71,7 @@
 		<a href="#main-content" class="skip-link">Skip to main content</a>
 
 		<nav id="desktop-nav" aria-label="Main Navigation">
-			<a href="./index" class="logo-link" aria-current="page">
+			<a href="./index.html" class="logo-link" aria-current="page">
 				<div class="logo">A<span>M</span></div>
 			</a>
 
@@ -85,12 +85,12 @@
 			</div>
 
 			<div class="theme-switch-wrapper">
-				<span id="sun-icon">☀️</span>
-				<label class="theme-switch" for="checkbox">
-					<input type="checkbox" id="checkbox" />
+				<span id="sun-icon" aria-hidden="true">☀️</span>
+				<label class="theme-switch" for="checkbox" aria-label="Toggle dark mode">
+					<input type="checkbox" id="checkbox" aria-label="Dark mode toggle" />
 					<div class="slider round"></div>
 				</label>
-				<span id="mood-icon">🌙</span>
+				<span id="mood-icon" aria-hidden="true">🌙</span>
 			</div>
 		</nav>
 
@@ -98,17 +98,17 @@
 			<div class="logo">A<span>M</span></div>
 
 			<div class="hamburger-menu">
-				<div class="hamburger-icon" onclick="toggleMenu()">
+				<div class="hamburger-icon" data-action="toggle-menu" aria-label="Toggle navigation menu">
 					<span></span>
 					<span></span>
 					<span></span>
 				</div>
 				<div class="menu-links">
 					<ul>
-						<li><a href="#about" onclick="toggleMenu()">About</a></li>
-						<li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-						<li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-						<li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+						<li><a href="#about" data-action="close-menu">About</a></li>
+						<li><a href="#experience" data-action="close-menu">Experience</a></li>
+						<li><a href="#projects" data-action="close-menu">Projects</a></li>
+						<li><a href="#contact" data-action="close-menu">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -129,12 +129,12 @@
 						><span>&nbsp;</span><span>S</span><span>o</span><span>l</span><span>v</span><span>e</span><span>r</span>
 					</p>
 					<div class="btn-container">
-						<button class="btn btn-color-2" onclick="window.open('./assets/alexMatthesResume.pdf')">Open Resume</button>
-						<button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+						<button class="btn btn-color-2" data-action="open-resume" aria-label="Open resume PDF">Open Resume</button>
+						<button class="btn btn-color-1" data-action="scroll-contact" aria-label="Scroll to contact section">Contact Info</button>
 					</div>
 					<div id="socials-container">
-						<img src="./assets/linkedin.svg" alt="My Linkedin Profile" class="icon" onclick="location.href='https://www.linkedin.com/in/matthesdev/'" />
-						<img src="./assets/github.svg" alt="My Github Page" class="icon" onclick="location.href='https://github.com/alexmatthes'" />
+						<img src="./assets/linkedin.svg" alt="My Linkedin Profile" class="icon" data-action="external-link" data-url="https://www.linkedin.com/in/matthesdev/" role="button" tabindex="0" />
+						<img src="./assets/github.svg" alt="My Github Page" class="icon" data-action="external-link" data-url="https://github.com/alexmatthes" role="button" tabindex="0" />
 					</div>
 				</div>
 			</section>
@@ -151,7 +151,7 @@
 							<div class="details-container">
 								<img src="./assets/experience.svg" alt="Icon representing experience" class="icon" />
 								<h3>Experience</h3>
-								<p>Student Technology Assistant <br />Resturaunt Host</p>
+								<p>Student Technology Assistant <br />Restaurant Host</p>
 							</div>
 
 							<div class="details-container">
@@ -165,7 +165,7 @@
 								<h3>Hobbies</h3>
 								<p>Photography<br />Theatre & Acting<br />Fitness<br />Music</p>
 								<div class="btn-container" style="margin-top: 1rem">
-									<button class="btn btn-color-2 project-btn" onclick="window.open('photography-portfolio', '_blank')">See My Photos</button>
+									<button class="btn btn-color-2 project-btn" data-action="open-page" data-url="photography-portfolio.html" data-target="_blank">See My Photos</button>
 								</div>
 							</div>
 						</div>
@@ -179,7 +179,7 @@
 						</div>
 					</div>
 				</div>
-				<img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" onclick="location.href='#experience'" />
+				<img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" data-action="scroll-to" data-target="#experience" role="button" tabindex="0" />
 			</section>
 
 			<section id="experience">
@@ -263,7 +263,7 @@
 						</div>
 					</div>
 				</div>
-				<img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" onclick="location.href='#projects'" />
+				<img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" data-action="scroll-to" data-target="#projects" role="button" tabindex="0" />
 			</section>
 
 			<section id="projects">
@@ -278,8 +278,8 @@
 							<h2 class="experience-sub-title project-title">Personal Portfolio</h2>
 							<p>This portfolio showcases my web development skills using HTML, CSS, and JavaScript. It's responsive, accessible, and SEO-optimized.</p>
 							<div class="btn-container">
-								<button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alexmatthes/portfolio-project'">Github</button>
-								<button class="btn btn-color-2 project-btn" onclick="location.href='./project1'">Read More</button>
+								<button class="btn btn-color-2 project-btn" data-action="external-link" data-url="https://github.com/alexmatthes/portfolio-project">Github</button>
+								<button class="btn btn-color-2 project-btn" data-action="navigate" data-url="./project1.html">Read More</button>
 							</div>
 						</div>
 
@@ -290,13 +290,13 @@
 							<h2 class="experience-sub-title project-title">writeAM Text Editor</h2>
 							<p>A lightweight, minimalist text editor that runs directly in your terminal, built from scratch in C with zero external library dependencies.</p>
 							<div class="btn-container">
-								<button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/alexmatthes/writeAM-text-editor'">Github</button>
-								<button class="btn btn-color-2 project-btn" onclick="location.href='./project2'">Read More</button>
+								<button class="btn btn-color-2 project-btn" data-action="external-link" data-url="https://github.com/alexmatthes/writeAM-text-editor">Github</button>
+								<button class="btn btn-color-2 project-btn" data-action="navigate" data-url="./project2.html">Read More</button>
 							</div>
 						</div>
 					</div>
 				</div>
-				<img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" onclick="location.href='#contact'" />
+				<img src="./assets/arrow.svg" alt="Arrow Icon" class="icon arrow" data-action="scroll-to" data-target="#contact" role="button" tabindex="0" />
 			</section>
 
 			<section id="contact">

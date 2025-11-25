@@ -3,16 +3,7 @@
 // ============================================
 const Navigation = {
 	init() {
-		this.setupHamburgerMenu();
 		this.setupClickOutside();
-	},
-
-	setupHamburgerMenu() {
-		// Only setup if hamburger nav exists
-		const icon = document.querySelector('.hamburger-icon');
-		if (!icon) return;
-
-		icon.addEventListener('click', () => this.toggleMenu());
 	},
 
 	setupClickOutside() {
@@ -33,12 +24,16 @@ const Navigation = {
 	},
 
 	toggleMenu() {
-		const menu = document.querySelector('.menu-links');
-		const icon = document.querySelector('.hamburger-icon');
+		try {
+			const menu = document.querySelector('.menu-links');
+			const icon = document.querySelector('.hamburger-icon');
 
-		if (menu && icon) {
-			menu.classList.toggle('open');
-			icon.classList.toggle('open');
+			if (menu && icon) {
+				menu.classList.toggle('open');
+				icon.classList.toggle('open');
+			}
+		} catch (error) {
+			console.error('Error toggling menu:', error);
 		}
 	},
 };
@@ -48,31 +43,45 @@ const Navigation = {
 // ============================================
 const ThemeToggle = {
 	init() {
-		this.toggleSwitch = document.querySelector(
-			'.theme-switch input[type="checkbox"]'
-		);
-		if (!this.toggleSwitch) return;
+		try {
+			this.toggleSwitch = document.querySelector(
+				'.theme-switch input[type="checkbox"]'
+			);
+			if (!this.toggleSwitch) return;
 
-		this.loadTheme();
-		this.toggleSwitch.addEventListener('change', (e) => this.switchTheme(e));
+			this.loadTheme();
+			this.toggleSwitch.addEventListener('change', (e) => this.switchTheme(e));
+		} catch (error) {
+			console.error('Error initializing theme toggle:', error);
+		}
 	},
 
 	loadTheme() {
-		const currentTheme = localStorage.getItem('theme');
+		try {
+			const currentTheme = localStorage.getItem('theme');
 
-		if (currentTheme === 'dark-mode') {
-			document.body.classList.add('dark-mode');
-			this.toggleSwitch.checked = true;
+			if (currentTheme === 'dark-mode') {
+				document.body.classList.add('dark-mode');
+				if (this.toggleSwitch) {
+					this.toggleSwitch.checked = true;
+				}
+			}
+		} catch (error) {
+			console.error('Error loading theme:', error);
 		}
 	},
 
 	switchTheme(e) {
-		if (e.target.checked) {
-			document.body.classList.add('dark-mode');
-			localStorage.setItem('theme', 'dark-mode');
-		} else {
-			document.body.classList.remove('dark-mode');
-			localStorage.setItem('theme', 'light-mode');
+		try {
+			if (e.target.checked) {
+				document.body.classList.add('dark-mode');
+				localStorage.setItem('theme', 'dark-mode');
+			} else {
+				document.body.classList.remove('dark-mode');
+				localStorage.setItem('theme', 'light-mode');
+			}
+		} catch (error) {
+			console.error('Error switching theme:', error);
 		}
 	},
 };
@@ -82,20 +91,27 @@ const ThemeToggle = {
 // ============================================
 const ScrollAnimations = {
 	init() {
-		const hiddenElements = document.querySelectorAll('.hidden');
-		if (hiddenElements.length === 0) return;
+		try {
+			const hiddenElements = document.querySelectorAll('.hidden');
+			if (hiddenElements.length === 0) return;
 
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					entry.target.classList.add('show');
-				} else {
-					entry.target.classList.remove('show');
-				}
-			});
-		});
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('show');
+						} else {
+							entry.target.classList.remove('show');
+						}
+					});
+				},
+				{ threshold: 0.1 }
+			);
 
-		hiddenElements.forEach((el) => observer.observe(el));
+			hiddenElements.forEach((el) => observer.observe(el));
+		} catch (error) {
+			console.error('Error initializing scroll animations:', error);
+		}
 	},
 };
 
@@ -104,49 +120,74 @@ const ScrollAnimations = {
 // ============================================
 const LightboxGallery = {
 	init() {
-		this.modal = document.getElementById('lightbox-modal');
-		if (!this.modal) return;
+		try {
+			this.modal = document.getElementById('lightbox-modal');
+			if (!this.modal) return;
 
-		this.modalImage = document.getElementById('lightbox-image');
-		this.photoItems = document.querySelectorAll('.photo-item img');
-		this.closeButton = document.querySelector('.close-button');
+			this.modalImage = document.getElementById('lightbox-image');
+			if (!this.modalImage) {
+				console.warn('Lightbox image element not found');
+				return;
+			}
 
-		this.setupEventListeners();
+			this.photoItems = document.querySelectorAll('.photo-item img');
+			this.closeButton = document.querySelector('.close-button');
+
+			this.setupEventListeners();
+		} catch (error) {
+			console.error('Error initializing lightbox gallery:', error);
+		}
 	},
 
 	setupEventListeners() {
-		// Click on images to open
-		this.photoItems.forEach((item) => {
-			item.addEventListener('click', () => this.openModal(item.src));
-		});
+		try {
+			// Click on images to open
+			this.photoItems.forEach((item) => {
+				item.addEventListener('click', () => this.openModal(item.src));
+			});
 
-		// Close button
-		this.closeButton.addEventListener('click', () => this.closeModal());
-
-		// Click outside to close
-		window.addEventListener('click', (event) => {
-			if (event.target === this.modal) {
-				this.closeModal();
+			// Close button
+			if (this.closeButton) {
+				this.closeButton.addEventListener('click', () => this.closeModal());
 			}
-		});
 
-		// ESC key to close
-		document.addEventListener('keydown', (event) => {
-			if (event.key === 'Escape' && this.modal.style.display === 'flex') {
-				this.closeModal();
-			}
-		});
+			// Click outside to close
+			window.addEventListener('click', (event) => {
+				if (event.target === this.modal) {
+					this.closeModal();
+				}
+			});
+
+			// ESC key to close
+			document.addEventListener('keydown', (event) => {
+				if (event.key === 'Escape' && this.modal.style.display === 'flex') {
+					this.closeModal();
+				}
+			});
+		} catch (error) {
+			console.error('Error setting up lightbox event listeners:', error);
+		}
 	},
 
 	openModal(src) {
-		this.modal.style.display = 'flex';
-		this.modalImage.src = src;
-		document.body.style.overflow = 'hidden'; // Prevent scrolling
+		try {
+			if (!this.modal || !this.modalImage) return;
+			this.modal.style.display = 'flex';
+			this.modalImage.src = src;
+			document.body.style.overflow = 'hidden'; // Prevent scrolling
+		} catch (error) {
+			console.error('Error opening modal:', error);
+		}
 	},
 
 	closeModal() {
-		this.modal.style.display = 'none';
-		document.body.style.overflow = ''; // Restore scrolling
+		try {
+			if (!this.modal) return;
+			this.modal.style.display = 'none';
+			document.body.style.overflow = ''; // Restore scrolling
+		} catch (error) {
+			console.error('Error closing modal:', error);
+		}
 	},
 };
 
@@ -155,28 +196,40 @@ const LightboxGallery = {
 // ============================================
 const MagneticIcons = {
 	init() {
-		const icons = document.querySelectorAll('#socials-container .icon');
-		if (icons.length === 0) return;
+		try {
+			const icons = document.querySelectorAll('#socials-container .icon');
+			if (icons.length === 0) return;
 
-		icons.forEach((icon) => {
-			icon.addEventListener('mousemove', (e) => this.handleMouseMove(e, icon));
-			icon.addEventListener('mouseleave', (icon) =>
-				this.handleMouseLeave(icon)
-			);
-		});
+			icons.forEach((icon) => {
+				icon.addEventListener('mousemove', (e) => this.handleMouseMove(e, icon));
+				icon.addEventListener('mouseleave', (e) => this.handleMouseLeave(e));
+			});
+		} catch (error) {
+			console.error('Error initializing magnetic icons:', error);
+		}
 	},
 
 	handleMouseMove(e, icon) {
-		const { offsetX: x, offsetY: y } = e;
-		const { offsetWidth: width, offsetHeight: height } = icon;
-		const move = 25;
-		const xMove = (x / width) * (move * 2) - move;
-		const yMove = (y / height) * (move * 2) - move;
-		icon.style.transform = `translate(${xMove}px, ${yMove}px)`;
+		try {
+			const { offsetX: x, offsetY: y } = e;
+			const { offsetWidth: width, offsetHeight: height } = icon;
+			const move = 25;
+			const xMove = (x / width) * (move * 2) - move;
+			const yMove = (y / height) * (move * 2) - move;
+			icon.style.transform = `translate(${xMove}px, ${yMove}px)`;
+		} catch (error) {
+			console.error('Error handling mouse move:', error);
+		}
 	},
 
-	handleMouseLeave(icon) {
-		icon.target.style.transform = '';
+	handleMouseLeave(e) {
+		try {
+			if (e.target && e.target.style) {
+				e.target.style.transform = '';
+			}
+		} catch (error) {
+			console.error('Error handling mouse leave:', error);
+		}
 	},
 };
 
@@ -185,18 +238,132 @@ const MagneticIcons = {
 // ============================================
 const StaggeredReveal = {
 	init() {
-		this.animateElement('#main-title');
-		this.animateElement('#sub-title');
+		try {
+			this.animateElement('#main-title');
+			this.animateElement('#sub-title');
+		} catch (error) {
+			console.error('Error initializing staggered reveal:', error);
+		}
 	},
 
 	animateElement(selector) {
-		const element = document.querySelector(selector);
-		if (!element) return;
+		try {
+			const element = document.querySelector(selector);
+			if (!element) return;
 
-		element.querySelectorAll('span').forEach((letter, i) => {
-			const jitter = (Math.random() * 0.04).toFixed(3);
-			letter.style.animationDelay = `${i * 0.1 + Number(jitter)}s`;
+			element.querySelectorAll('span').forEach((letter, i) => {
+				const jitter = (Math.random() * 0.04).toFixed(3);
+				letter.style.animationDelay = `${i * 0.1 + Number(jitter)}s`;
+			});
+		} catch (error) {
+			console.error(`Error animating element ${selector}:`, error);
+		}
+	},
+};
+
+// ============================================
+// EVENT HANDLER MODULE
+// ============================================
+const EventHandler = {
+	init() {
+		// Use event delegation for all data-action handlers
+		document.addEventListener('click', (event) => {
+			const target = event.target.closest('[data-action]');
+			if (!target) return;
+
+			const action = target.getAttribute('data-action');
+			if (!action) return;
+
+			try {
+				this.handleAction(action, target, event);
+			} catch (error) {
+				console.error(`Error handling action "${action}":`, error);
+			}
 		});
+
+		// Handle keyboard events for interactive elements
+		document.addEventListener('keydown', (event) => {
+			if (event.key !== 'Enter' && event.key !== ' ') return;
+
+			const target = event.target.closest('[data-action]');
+			if (!target) return;
+
+			const action = target.getAttribute('data-action');
+			if (!action) return;
+
+			try {
+				event.preventDefault();
+				this.handleAction(action, target, event);
+			} catch (error) {
+				console.error(`Error handling action "${action}":`, error);
+			}
+		});
+	},
+
+	handleAction(action, element, event) {
+		switch (action) {
+			case 'toggle-menu':
+				Navigation.toggleMenu();
+				break;
+
+			case 'close-menu':
+				Navigation.toggleMenu();
+				// Allow default link behavior
+				break;
+
+			case 'open-resume':
+				window.open('./assets/alexMatthesResume.pdf', '_blank');
+				break;
+
+			case 'scroll-contact':
+				event.preventDefault();
+				this.scrollToSection('#contact');
+				break;
+
+			case 'scroll-to':
+				event.preventDefault();
+				const target = element.getAttribute('data-target');
+				if (target) {
+					this.scrollToSection(target);
+				}
+				break;
+
+			case 'external-link':
+				const url = element.getAttribute('data-url');
+				if (url) {
+					window.open(url, '_blank');
+				}
+				break;
+
+			case 'navigate':
+				const navUrl = element.getAttribute('data-url');
+				if (navUrl) {
+					window.location.href = navUrl;
+				}
+				break;
+
+			case 'open-page':
+				const pageUrl = element.getAttribute('data-url');
+				const targetWindow = element.getAttribute('data-target') || '_self';
+				if (pageUrl) {
+					window.open(pageUrl, targetWindow);
+				}
+				break;
+
+			default:
+				console.warn(`Unknown action: ${action}`);
+		}
+	},
+
+	scrollToSection(selector) {
+		try {
+			const element = document.querySelector(selector);
+			if (element) {
+				element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+		} catch (error) {
+			console.error(`Error scrolling to ${selector}:`, error);
+		}
 	},
 };
 
@@ -204,15 +371,15 @@ const StaggeredReveal = {
 // INITIALIZE ALL MODULES
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
-	Navigation.init();
-	ThemeToggle.init();
-	ScrollAnimations.init();
-	LightboxGallery.init();
-	MagneticIcons.init();
-	StaggeredReveal.init();
+	try {
+		EventHandler.init();
+		Navigation.init();
+		ThemeToggle.init();
+		ScrollAnimations.init();
+		LightboxGallery.init();
+		MagneticIcons.init();
+		StaggeredReveal.init();
+	} catch (error) {
+		console.error('Error initializing modules:', error);
+	}
 });
-
-// Legacy function for onclick handlers (temporary - will refactor)
-function toggleMenu() {
-	Navigation.toggleMenu();
-}
