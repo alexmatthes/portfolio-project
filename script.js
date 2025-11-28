@@ -13,11 +13,7 @@ const Navigation = {
 
 			if (!menu || !icon) return;
 
-			if (
-				menu.classList.contains('open') &&
-				!menu.contains(event.target) &&
-				!icon.contains(event.target)
-			) {
+			if (menu.classList.contains('open') && !menu.contains(event.target) && !icon.contains(event.target)) {
 				this.toggleMenu();
 			}
 		});
@@ -44,9 +40,7 @@ const Navigation = {
 const ThemeToggle = {
 	init() {
 		try {
-			this.toggleSwitch = document.querySelector(
-				'.theme-switch input[type="checkbox"]'
-			);
+			this.toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 			if (!this.toggleSwitch) return;
 
 			this.loadTheme();
@@ -363,6 +357,51 @@ const EventHandler = {
 			}
 		} catch (error) {
 			console.error(`Error scrolling to ${selector}:`, error);
+		}
+	},
+
+	async handleTranslation() {
+		const inputField = document.getElementById('jargon-input');
+		const outputField = document.getElementById('translation-output');
+		const button = document.querySelector('[data-action="translate-text"]');
+
+		if (!inputField || !outputField) return;
+
+		const originalText = inputField.value.trim();
+		if (!originalText) {
+			outputField.innerText = 'Please input text to leverage this paradigm.';
+			return;
+		}
+
+		// 1. UI Loading State
+		const originalBtnText = button.innerText;
+		button.innerText = 'Synergizing...';
+		button.disabled = true;
+		outputField.style.opacity = '0.5';
+
+		try {
+			// 2. Call your Python Backend
+			// Ensure your backend is running on port 8000!
+			const response = await fetch('http://127.0.0.1:8000/translate', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ text: originalText }),
+			});
+
+			if (!response.ok) throw new Error('API Error');
+
+			const data = await response.json();
+
+			// 3. Update Output
+			outputField.innerText = data.translated_text;
+		} catch (error) {
+			console.error(error);
+			outputField.innerText = 'Error: The server is currently offline (circling back later).';
+		} finally {
+			// 4. Restore UI
+			button.innerText = originalBtnText;
+			button.disabled = false;
+			outputField.style.opacity = '1';
 		}
 	},
 };

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Corporate Translator</title>
+		<link rel="icon" type="image/png" href="./assets/favicon.svg" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=VT323&display=swap" rel="stylesheet" />
+
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="mediaqueries.css" media="screen" />
+	</head>
+	<body>
+		<nav id="desktop-nav" aria-label="Main Navigation">
+			<a href="./index.html" class="logo-link">
+				<div class="logo">A<span>M</span></div>
+			</a>
+			<div>
+				<ul class="nav-links">
+					<li><a href="./index.html#about">About</a></li>
+					<li><a href="./index.html#experience">Experience</a></li>
+					<li><a href="./index.html#projects">Projects</a></li>
+					<li><a href="./index.html#contact">Contact</a></li>
+				</ul>
+			</div>
+			<div class="theme-switch-wrapper">
+				<span id="sun-icon" aria-hidden="true">☀️</span>
+				<label class="theme-switch" for="checkbox" aria-label="Toggle dark mode">
+					<input type="checkbox" id="checkbox" aria-label="Dark mode toggle" />
+					<div class="slider round"></div>
+				</label>
+				<span id="mood-icon" aria-hidden="true">🌙</span>
+			</div>
+		</nav>
+
+		<nav id="hamburger-nav" aria-label="Hamburger Navigation Menu">
+			<div class="logo">A<span>M</span></div>
+			<div class="hamburger-menu">
+				<div class="hamburger-icon" data-action="toggle-menu" aria-label="Toggle navigation menu"><span></span><span></span><span></span></div>
+				<div class="menu-links">
+					<ul>
+						<li><a href="./index.html#about" data-action="close-menu">About</a></li>
+						<li><a href="./index.html#experience" data-action="close-menu">Experience</a></li>
+						<li><a href="./index.html#projects" data-action="close-menu">Projects</a></li>
+						<li><a href="./index.html#contact" data-action="close-menu">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<section id="translator-app">
+			<h1 class="title">Corporate Translator</h1>
+
+			<div class="translator-grid">
+				<div class="translator-column">
+					<label class="section__text__p1" for="jargon-input">Input Raw Thoughts</label>
+
+					<div class="crt-container">
+						<div class="crt-glow"></div>
+						<div class="scanline"></div>
+						<textarea id="jargon-input" class="crt-input" placeholder="> Type honest text here...&#10;> Example: I hate this meeting." spellcheck="false"></textarea>
+					</div>
+
+					<div class="btn-container" style="margin-top: 1.5rem; width: 100%">
+						<button class="btn btn-color-1" style="width: 100%" data-action="translate-text">Translate</button>
+					</div>
+				</div>
+
+				<div class="translator-column">
+					<label class="section__text__p1" style="background: var(--primary-accent); color: white">Official Output</label>
+
+					<div class="memo-pad" id="memo">
+						<div class="memo-header">
+							<div class="stamp">CONFIDENTIAL</div>
+							<h3>INTER-OFFICE MEMORANDUM</h3>
+						</div>
+
+						<div class="memo-meta">
+							<p><strong>TO:</strong> All Staff</p>
+							<p><strong>FROM:</strong> Management</p>
+							<p><strong>RE:</strong> Strategic Alignment</p>
+						</div>
+
+						<div class="memo-body">
+							<p id="translation-output" class="handwritten-text">Your translated corporate jargon will appear here...</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<nav aria-label="Footer Navigation Links">
+				<div class="nav-links-container">
+					<ul class="nav-links">
+						<li><a href="./index.html#about">About</a></li>
+						<li><a href="./index.html#experience">Experience</a></li>
+						<li><a href="./index.html#projects">Projects</a></li>
+						<li><a href="./index.html#contact">Contact</a></li>
+					</ul>
+				</div>
+			</nav>
+			<p>Copyright &#169; 2025 Alex Matthes. All Rights Reserved</p>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>
