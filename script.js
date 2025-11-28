@@ -343,6 +343,9 @@ const EventHandler = {
 					window.open(pageUrl, targetWindow);
 				}
 				break;
+			case 'translate-text':
+				this.handleTranslation();
+				break;
 
 			default:
 				console.warn(`Unknown action: ${action}`);
@@ -382,7 +385,7 @@ const EventHandler = {
 		try {
 			// 2. Call your Python Backend
 			// Ensure your backend is running on port 8000!
-			const response = await fetch('http://127.0.0.1:8000/translate', {
+			const response = await fetch('https://corporate-translator-api.onrender.com/translate', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ text: originalText }),
