@@ -306,7 +306,7 @@ const EventHandler = {
 				break;
 
 			case 'open-resume':
-				window.open('./assets/alexMatthesResume.pdf', '_blank');
+				window.open('./assets/Alex_Matthes_Resume.pdf', '_blank');
 				break;
 
 			case 'scroll-contact':
