@@ -410,6 +410,47 @@ const EventHandler = {
 };
 
 // ============================================
+// CHAT WIDGET MODULE
+// ============================================
+const ChatWidget = {
+	init() {
+		try {
+			this.btn = document.getElementById('chat-widget-btn');
+			this.modal = document.getElementById('chat-modal');
+			this.closeBtn = document.querySelector('.close-chat');
+
+			if (!this.btn || !this.modal) return;
+
+			this.setupEventListeners();
+		} catch (error) {
+			console.error('Error initializing chat widget:', error);
+		}
+	},
+
+	setupEventListeners() {
+		// Toggle Modal on FAB Click
+		this.btn.addEventListener('click', () => {
+			this.modal.classList.toggle('open');
+			// Optional: Change icon to 'X' when open
+		});
+
+		// Close Button
+		if (this.closeBtn) {
+			this.closeBtn.addEventListener('click', () => {
+				this.modal.classList.remove('open');
+			});
+		}
+
+		// Close if clicking outside (optional, but tricky with iframes)
+		document.addEventListener('click', (e) => {
+			if (!this.modal.contains(e.target) && !this.btn.contains(e.target) && this.modal.classList.contains('open')) {
+				// this.modal.classList.remove('open'); // Uncomment if you want click-outside-to-close
+			}
+		});
+	}
+};
+
+// ============================================
 // INITIALIZE ALL MODULES
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -421,6 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		LightboxGallery.init();
 		MagneticIcons.init();
 		StaggeredReveal.init();
+		ChatWidget.init();
 	} catch (error) {
 		console.error('Error initializing modules:', error);
 	}

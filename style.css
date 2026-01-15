@@ -1203,3 +1203,114 @@ body.dark-mode .handwritten-text {
 body.dark-mode .memo-meta p {
 	color: #94a3b8;
 }
+
+/* ============================================
+   CHAT WIDGET STYLES
+   ============================================ */
+
+#chat-widget-btn {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	width: 60px;
+	height: 60px;
+	background-color: var(--primary-accent); /* Brick Red */
+	border: 2px solid var(--ink-brown);
+	border-radius: 50%;
+	box-shadow: 4px 4px 0 var(--ink-brown);
+	cursor: pointer;
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: var(--transition-base);
+}
+
+#chat-widget-btn:hover {
+	transform: translate(-2px, -2px);
+	box-shadow: 6px 6px 0 var(--ink-brown);
+	background-color: var(--secondary-accent); /* Goldenrod hover */
+}
+
+#chat-widget-btn img {
+	width: 30px;
+	height: 30px;
+	filter: invert(1); /* White icon if using dark svg */
+}
+
+/* Modal Overlay */
+.chat-modal {
+	position: fixed;
+	bottom: 100px;
+	right: 30px;
+	width: 400px;
+	height: 600px;
+	z-index: 1001;
+	display: none; /* Hidden by default */
+	animation: popUp 0.3s ease-out forwards;
+}
+
+.chat-modal.open {
+	display: block;
+}
+
+/* Modal Content (The Box) */
+.chat-modal-content {
+	width: 100%;
+	height: 100%;
+	background: var(--bg-color);
+	border: 4px solid var(--ink-brown);
+	border-radius: var(--radius-md);
+	box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Header */
+.chat-header {
+	background: var(--ink-brown);
+	color: #fff3d6;
+	padding: 15px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: var(--heading-font);
+}
+
+.close-chat {
+	font-size: 1.5rem;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.close-chat:hover {
+	color: var(--secondary-accent);
+}
+
+/* The Iframe */
+.chat-modal iframe {
+	flex: 1;
+	width: 100%;
+	border: none;
+	background: white;
+}
+
+@keyframes popUp {
+	from { opacity: 0; transform: translateY(20px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+	.chat-modal {
+		width: 90%;
+		height: 80%;
+		right: 5%;
+		bottom: 5%;
+	}
+	#chat-widget-btn {
+		bottom: 20px;
+		right: 20px;
+	}
+}
