@@ -53,7 +53,7 @@
             <input type="checkbox" id="checkbox" aria-label="Dark mode toggle" />
             <div class="slider round"></div>
           </label>
-          <span id="mood-icon" aria-hidden="true">🌙</span> 
+          <span id="mood-icon" aria-hidden="true">🌙</span>
         </div>
     </nav>
 
@@ -76,38 +76,53 @@
             </div>
         </div>
     </nav>
-    
+
     <section id="about">
         <h1 class="title">writeAM Text Editor</h1>
-        <p class="section__text__p2"><br>Overview and Goals : </p>
-            <div class="text-container">
-                    <p>The goal of this project was to build a lightweight, minimalist text editor that runs entirely in the terminal. Named "writeAM" after my initials, this project was an exercise in systems programming, built from scratch in C with no external library dependencies to deepen my understanding of memory management, terminal I/O, and application architecture.</p>
-            </div>
 
-        <p class="section__text__p2"><br>Inspiration: </p>
-            <div class="text-container">
-                    <p>This project was heavily inspired by the classic "Build Your Own Text Editor" tutorial for the Kilo editor. I was motivated to create a tool that embodies the simplicity and power of traditional Unix command-line utilities. The design focuses on a clean, functional, terminal-based UI, using raw mode and ANSI escape sequences to control rendering and user interaction directly.</p>
-            </div>
-        
-        <p class="section__text__p2"><br>Challenges : </p>
-            <div class="text-container">
-                    <p>Building an editor in pure C presented several challenges. A primary one was managing the terminal in raw mode, which required careful handling of low-level I/O to process keypresses individually instead of line by line. Implementing the syntax highlighting engine, which parses code to color keywords, comments, and strings, was another complex task that demanded meticulous string manipulation and state management. Finally, ensuring robust memory management for file buffers and text rows was critical to prevent leaks and crashes.</p>
-            </div>
+        <p class="section__text__p2"><br>Overview & Goals</p>
+        <div class="text-container">
+            <p>
+                <strong>writeAM</strong> is a lightweight, zero-dependency text editor running entirely in the terminal. Named after my initials, this project was a deep dive into systems programming in C.
+            </p>
+            <p>
+                The goal was to demystify how command-line tools function under the hood by building a functional editor from scratch, bypassing high-level abstractions to interact directly with system memory and terminal input/output streams.
+            </p>
+        </div>
 
-        <p class="section__text__p2"><br>Key Features : </p>
-            <div class="text-container">
-                    <ul>
-                        <li><b>Minimalist Terminal UI:</b> A clean, distraction-free writing environment that runs directly in the terminal.</li>
-                        <li><b>Syntax Highlighting:</b> Provides syntax highlighting for the C programming language, including keywords, comments, strings, and numbers.</li>
-                        <li><b>Text Search:</b> Features an incremental search function (Ctrl+F) to quickly find text within a file.</li>
-                        <li><b>Zero Dependencies:</b> Built with pure C and standard libraries, making it highly portable across Unix-like systems.</li>
-                    </ul>
-            </div>
-        
-        <p class="section__text__p2"><br>Learning Outcomes : </p>
-            <div class="text-container">
-                    <p>This project was an invaluable learning experience in C programming and low-level systems interaction. I gained a practical understanding of terminal I/O, including manipulating raw mode and using escape sequences. It significantly improved my skills in manual memory management, pointer arithmetic, and building robust data structures. Developing features like search and syntax highlighting also provided deep insights into text processing algorithms and state machine design.</p>
-            </div> 
+        <p class="section__text__p2"><br>Inspiration</p>
+        <div class="text-container">
+            <p>
+                Inspired by the legendary reliability of tools like Vim and Nano, and guided by the logic of the Kilo editor, I wanted to create a tool that embodies the Unix philosophy: do one thing and do it well. The design focuses on raw efficiency, using ANSI escape sequences to handle rendering without the bloat of graphical libraries like ncurses.
+            </p>
+        </div>
+
+        <p class="section__text__p2"><br>Technical Challenges</p>
+        <div class="text-container">
+            <p>
+                <strong>Terminal I/O & Raw Mode:</strong> The most significant hurdle was manipulating the terminal's <code>termios</code> struct to switch from canonical mode to raw mode. This allowed the program to process input byte-by-byte (essential for mapping custom keybindings) rather than waiting for a newline delimiter.
+            </p>
+            <p>
+                <strong>Dynamic Memory Management:</strong> Handling file buffers required rigorous manual memory management. I implemented dynamic arrays (reallocating memory as rows grow) to prevent buffer overflows while strictly managing `malloc` and `free` cycles to ensure zero memory leaks.
+            </p>
+        </div>
+
+        <p class="section__text__p2"><br>Key Features</p>
+        <div class="text-container">
+            <ul>
+                <li><b>Zero External Dependencies:</b> Built strictly with the C Standard Library, ensuring high portability across Unix/Linux systems.</li>
+                <li><b>Syntax Highlighting Engine:</b> A custom parser that detects and color-codes C-language keywords, strings, and comments in real-time.</li>
+                <li><b>Incremental Search:</b> Implemented a search algorithm (Ctrl+F) that scans the file buffer and scrolls the viewport to matches dynamically.</li>
+                <li><b>Distraction-Free UI:</b> A raw-mode interface featuring line numbering, status bars, and dirty-flag indicators for unsaved changes.</li>
+            </ul>
+        </div>
+
+        <p class="section__text__p2"><br>Engineering Outcomes</p>
+        <div class="text-container">
+            <p>
+                This project was a masterclass in <strong>C programming</strong> and pointer arithmetic. It sharpened my ability to debug segmentation faults and understand the stack vs. heap. Beyond the code, I gained a fundamental understanding of how software interacts with the OS kernel via standard input/output (STDIN/STDOUT), significantly improving my confidence in low-level systems architecture.
+            </p>
+        </div>
     </section>
 
     <footer>
