@@ -1275,62 +1275,39 @@ body.dark-mode .memo-meta p {
 }
 
 /* ============================================
-   CUSTOM RETRO SCROLLBAR
+   CUSTOM RETRO SCROLLBAR (BOXY VERSION)
    ============================================ */
 
-/* 1. The Width */
+/* 1. The Width - Made slightly wider for extra chunkiness */
 ::-webkit-scrollbar {
-    width: 16px; /* Chunky width for that tactile feel */
+    width: 20px;
 }
 
 /* 2. The Track (Background) */
 ::-webkit-scrollbar-track {
     background: var(--bg-color);
-    border-left: 2px solid var(--ink-brown); /* Draws a line separating content from scrollbar */
+    border-left: 2px solid var(--ink-brown);
+    /* specialized retro pattern for the track */
+    background-image: radial-gradient(var(--ink-brown) 1px, transparent 1px);
+    background-size: 4px 4px;
+    opacity: 0.5;
 }
 
 /* 3. The Thumb (The moving part) */
 ::-webkit-scrollbar-thumb {
     background-color: var(--primary-accent); /* Brick Red */
-    border: 2px solid var(--ink-brown); /* Hard outline */
-    border-radius: 99px; /* Pill shape */
+    border: 2px solid var(--text-color); /* Hard outline */
+    border-radius: 0; /* REMOVED the roundness -> Squares are more retro */
 
-    /* This creates a 3D "button" effect inside the scrollbar */
-    box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.3),
-                inset -2px -2px 0 rgba(0, 0, 0, 0.2);
+    /* Hard bevel effect (Highligh Top/Left, Shadow Bottom/Right) */
+    box-shadow: inset 2px 2px 0 rgba(255, 255, 255, 0.5),
+                inset -2px -2px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* 4. Hover State */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--secondary-accent); /* Goldenrod on hover */
+    background-color: var(--secondary-accent); /* Goldenrod */
     cursor: grab;
 }
 
-/* 5. Firefox Support (Standard Property) */
-html {
-    scrollbar-width: auto; /* Options: auto, thin, none */
-    scrollbar-color: var(--primary-accent) var(--bg-color);
-}
 
-/* ============================================
-   DARK MODE SCROLLBAR OVERRIDES
-   ============================================ */
-body.dark-mode::-webkit-scrollbar-track {
-    background: #14110f; /* Dark background */
-    border-left: 2px solid #3a2f29;
-}
-
-body.dark-mode::-webkit-scrollbar-thumb {
-    background-color: #2a2420; /* Darker thumb */
-    border: 2px solid #d9c38b; /* Gold border to match dark theme accents */
-}
-
-body.dark-mode::-webkit-scrollbar-thumb:hover {
-    background-color: var(--secondary-accent);
-    border-color: var(--ink-brown);
-}
-
-/* Firefox Dark Mode */
-body.dark-mode {
-    scrollbar-color: #2a2420 #14110f;
-}
